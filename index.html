@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portafolio | Zeramoth</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f19;
+            color: #f2f2f2;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #252c3a;
+            padding: 18px 8%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #6ea8fe;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 8%;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .tag {
+            color: #6ea8fe;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #b9c0cc;
+            max-width: 650px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            border: 1px solid #6ea8fe;
+            color: #6ea8fe;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background: #6ea8fe;
+            color: #0b0f19;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .photo {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #6ea8fe;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #121826;
+            border: 1px solid #252c3a;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .card p {
+            color: #b9c0cc;
+        }
+
+        .report {
+            background: #121826;
+            border-left: 3px solid #6ea8fe;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .report p {
+            margin-bottom: 18px;
+            color: #d0d5dd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #252c3a;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .photo {
+                margin: auto;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">ZERAMOTH</div>
+
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#infografias">Infografías</a>
+            <a href="#informe">Informe</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+
+            <div class="tag">
+                Ingeniería en Ciencias Informáticas
+            </div>
+
+            <h1>
+                Mi Portafolio Digital
+            </h1>
+
+            <p>
+                Estudiante de la Universidad de las Ciencias Informáticas
+                interesado en la programación, la tecnología y el desarrollo
+                de videojuegos.
+            </p>
+
+            <a class="button" href="#sobre-mi">
+                Conocer mi perfil
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi">
+
+        <div class="about-grid">
+
+            <img
+                class="photo"
+                src="foto.jpg"
+                alt="Fotografía personal"
+            >
+
+            <div>
+
+                <h2>Sobre mí</h2>
+
+                <p>
+                    Soy estudiante de Ingeniería en Ciencias Informáticas
+                    en la Universidad de las Ciencias Informáticas de Cuba,
+                    con especial interés en el desarrollo de videojuegos
+                    y en el uso de la tecnología como medio para crear
+                    experiencias de entretenimiento innovadoras.
+                </p>
+
+                <br>
+
+                <p>
+                    Mi principal área de interés es la industria del
+                    entretenimiento, especialmente el desarrollo de videojuegos
+                    especialmente en el área de programación y diseño de mecánicas
+                    combate.
+                </p>
+
+                <br>
+
+                <h3>Aspiraciones profesionales</h3>
+
+                <p>
+                    Mi objetivo profesional es especializarme en el
+                    desarrollo de videojuegos y participar en la creación
+                    de proyectos con alcance internacional. Aspiro a
+                    desarrollar videojuegos que combinen calidad técnica,
+                    creatividad y una identidad propia, tomando como
+                    referentes a estudios reconocidos de la industria
+                    como FromSoftware y Kojima Productions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERESES -->
+    <section>
+
+        <h2>Áreas de interés</h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>🎮 Desarrollo de videojuegos</h3>
+                <p>
+                    Diseño y programación de experiencias interactivas
+                    orientadas a la industria del entretenimiento.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Programación</h3>
+                <p>
+                    Desarrollo de conocimientos y habilidades para crear
+                    soluciones y productos digitales.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Tecnología</h3>
+                <p>
+                    Exploración de nuevas tecnologías y herramientas
+                    aplicadas al desarrollo de productos digitales.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFOGRAFIAS -->
+    <section id="infografias">
+
+        <h2>Infografías</h2>
+
+        <p>
+            Selección de infografías elaboradas durante mi formación
+            académica.
+        </p>
+
+        <br>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Infografía 1</h3>
+                <p>
+                    Espacio destinado a la primera infografía.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Infografía 2</h3>
+                <p>
+                    Espacio destinado a la segunda infografía.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Infografía 3</h3>
+                <p>
+                    Espacio destinado a la tercera infografía.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORME -->
+    <section id="informe">
+
+        <h2>Informe</h2>
+
+        <div class="report">
+
+            <h3>
+                El papel del ingeniero en la transformación digital cubana
+            </h3>
+
+            <br>
+
+            <p>
+                En esta sección se presentará la reflexión escrita sobre
+                el papel del ingeniero en la transformación digital cubana.
+            </p>
+
+            <p>
+                El informe abordará la importancia de los profesionales
+                de las tecnologías de la información, sus posibilidades
+                de contribución al desarrollo tecnológico y los principales
+                retos relacionados con la transformación digital.
+            </p>
+
+            <p>
+                También se incluirá una reflexión personal sobre el papel
+                que puedo desempeñar como futuro ingeniero en Ciencias
+                Informáticas.
+            </p>
+
+            <br>
+
+            <h3>Referencias bibliográficas</h3>
+
+            <p>
+                Las referencias bibliográficas se incorporarán siguiendo
+                las normas APA.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 — [TU NOMBRE]
+    </p>
+
+    <p>
+        Ingeniería en Ciencias Informáticas · UCI
+    </p>
+
+</footer>
+
+</body>
+  </html>
