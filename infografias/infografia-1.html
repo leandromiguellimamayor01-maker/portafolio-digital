@@ -1,1 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía 1</title>
+
+    <style>
+        /* =========================================================
+           RESET Y VARIABLES DE COLOR
+           ========================================================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1e3a5f;
+            --navy-dark: #142a45;
+            --teal: #4a9d9c;
+            --blue-light: #e8f2f8;
+            --gray: #64748b;
+            --border: #d0dde5;
+            --bg: #f5f8fa;
+            --card: #ffffff;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: #1e293b;
+            line-height: 1.55;
+        }
+
+        /* =========================================================
+           CONTENEDOR GENERAL
+           ========================================================= */
+        .infografia {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: var(--card);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* =========================================================
+           CABECERA: título, subtítulo y silueta decorativa
+           ========================================================= */
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #1e3a5f 0%, #29527d 100%);
+            color: #fff;
+            padding: 45px 50px 55px;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 220px;
+            height: 80px;
+            background: rgba(140, 200, 230, 0.25);
+            clip-path: polygon(
+                0% 40%, 8% 30%, 18% 35%, 30% 20%, 45% 25%, 60% 15%,
+                75% 25%, 88% 20%, 100% 30%, 100% 55%, 88% 60%, 75% 55%,
+                60% 70%, 45% 65%, 30% 75%, 18% 70%, 8% 80%, 0% 70%
+            );
+            border-radius: 4px;
+        }
+
+        .header h1 {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            color: #b8d4e8;
+            max-width: 700px;
+        }
+
+        /* =========================================================
+           SECCIONES: cada bloque tiene título y rejilla de tarjetas
+           ========================================================= */
+        .periodo {
+            padding: 45px 50px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .periodo:last-of-type {
+            border-bottom: 0;
+        }
+
+        .periodo-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .periodo-header .bar {
+            width: 6px;
+            height: 38px;
+            background: var(--teal);
+            border-radius: 3px;
+        }
+
+        .periodo-header h2 {
+            font-size: 22px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .periodo-header .rango {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+            margin-left: auto;
+            background: var(--blue-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* Rejilla de tarjetas: 3 columnas en escritorio */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        /* =========================================================
+           TARJETA INDIVIDUAL: badge de año + etiqueta + texto + imagen
+           ========================================================= */
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.1);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: var(--navy);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Etiquetas de categoría: cambia la clase según corresponda */
+        .tag {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 9px;
+            border-radius: 4px;
+        }
+        .tag.hardware    { background: #e3f2fd; color: #1565c0; }
+        .tag.politicas   { background: #fde8e8; color: #c0392b; }
+        .tag.hito        { background: #e8f5e9; color: #2e7d32; }
+        .tag.institucion { background: #f3e8fd; color: #7b3fa0; }
+        .tag.formacion   { background: #fff4e0; color: #b06a00; }
+        .tag.tendencia   { background: #e0f7fa; color: #00707a; }
+
+        .card h3 {
+            font-size: 15px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .card p {
+            font-size: 12.5px;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .card .bullet {
+            font-size: 12px;
+            color: #64748b;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .card .bullet::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        /* Marcador de imagen: cambia el src por tu archivo real */
+        .card-img {
+            margin-top: auto;
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #eaf2f8, #d6e6f0);
+            display: block;
+            object-fit: cover;
+            border: 1px dashed var(--border);
+        }
+
+        /* =========================================================
+           BLOQUES FINALES EN DOS COLUMNAS
+           ========================================================= */
+        .bloques-finales {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 45px 50px;
+            border-top: 1px solid var(--border);
+            background: #fafcfd;
+        }
+
+        .bloque {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .bloque h3 {
+            font-size: 14px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .bloque ul {
+            list-style: none;
+        }
+
+        .bloque li {
+            font-size: 12.5px;
+            color: #475569;
+            padding: 7px 0;
+            border-bottom: 1px dashed #e8eef3;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .bloque li:last-child { border-bottom: 0; }
+
+        .bloque li span {
+            color: var(--gray);
+            font-size: 11px;
+            text-align: right;
+        }
+
+        /* =========================================================
+           FUENTES
+           ========================================================= */
+        .fuentes {
+            padding: 30px 50px 45px;
+            background: var(--navy-dark);
+            color: #b8d4e8;
+        }
+
+        .fuentes h3 {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .fuentes ol { padding-left: 20px; }
+
+        .fuentes li {
+            font-size: 11px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+            color: #9fbed6;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .bloques-finales { grid-template-columns: 1fr; }
+            .header h1 { font-size: 32px; }
+            .header::after { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .header, .periodo, .bloques-finales, .fuentes {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+            .grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 24px; }
+            .periodo-header h2 { font-size: 17px; }
+            .periodo-header .rango { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="infografia">
+
+    <!-- =========================================================
+         CABECERA
+         Pon aquí el título general y el subtítulo de tu infografía
+         ========================================================= -->
+    <header class="header">
+        <h1>TÍTULO PRINCIPAL DE LA INFOGRAFÍA</h1>
+        <p class="subtitle">
+            Subtítulo o frase que resume el contenido de la infografía.
+        </p>
+    </header>
+
+
+    <!-- =========================================================
+         SECCIÓN 1
+         Cambia "Título de la sección 1" y el rango de años.
+         Cada tarjeta representa un hito. Duplica o elimina tarjetas
+         según necesites.
+         ========================================================= -->
+    <section class="periodo">
+        <div class="periodo-header">
+            <span class="bar"></span>
+            <h2>Título de la sección 1</h2>
+            <span class="rango">AAAA – AAAA</span>
+        </div>
+
+        <div class="grid">
+
+            <!-- TARJETA 1 -->
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag hardware">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito. Aquí va el texto que tú
+                   escribas.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <!-- TARJETA 2 -->
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag politicas">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <!-- TARJETA 3 -->
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag hito">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <!-- Añade más tarjetas aquí duplicando el bloque <article> -->
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECCIÓN 2
+         ========================================================= -->
+    <section class="periodo">
+        <div class="periodo-header">
+            <span class="bar"></span>
+            <h2>Título de la sección 2</h2>
+            <span class="rango">AAAA – AAAA</span>
+        </div>
+
+        <div class="grid">
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag institucion">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag formacion">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag tendencia">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECCIÓN 3
+         ========================================================= -->
+    <section class="periodo">
+        <div class="periodo-header">
+            <span class="bar"></span>
+            <h2>Título de la sección 3</h2>
+            <span class="rango">AAAA – AAAA</span>
+        </div>
+
+        <div class="grid">
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag hito">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag hardware">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <span class="year-badge">AAAA</span>
+                    <span class="tag politicas">Categoría</span>
+                </div>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del hito.</p>
+                <img class="card-img" src="nombre_de_la_imagen.jpg"
+                     alt="Descripción de la imagen">
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         BLOQUES FINALES EN DOS COLUMNAS
+         Izquierda: lista de personas / instituciones
+         Derecha: lista de logros
+         ========================================================= -->
+    <section class="bloques-finales">
+
+        <!-- Lista 1 -->
+        <div class="bloque">
+            <h3>◆ Título del bloque izquierdo</h3>
+            <ul>
+                <li>Nombre o elemento <span>Detalle corto</span></li>
+                <li>Nombre o elemento <span>Detalle corto</span></li>
+                <li>Nombre o elemento <span>Detalle corto</span></li>
+                <li>Nombre o elemento <span>Detalle corto</span></li>
+            </ul>
+        </div>
+
+        <!-- Lista 2 -->
+        <div class="bloque">
+            <h3>◆ Título del bloque derecho</h3>
+            <ul>
+                <li>Logro o dato <span>Detalle corto</span></li>
+                <li>Logro o dato <span>Detalle corto</span></li>
+                <li>Logro o dato <span>Detalle corto</span></li>
+                <li>Logro o dato <span>Detalle corto</span></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FUENTES
+         Mínimo 3 fuentes (requisito de la tarea)
+         ========================================================= -->
+    <footer class="fuentes">
+        <h3>Fuentes</h3>
+        <ol>
+            <li>Autor, A. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
+            <li>Autor, B. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
+            <li>Autor, C. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
+        </ol>
+    </footer>
+
+</div>
+
+</body>
+
+</html>
