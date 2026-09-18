@@ -536,22 +536,22 @@ h2 span {
    ========================================================= */
 
 .hero {
-
+    width: min(var(--max-width), 92%);
     min-height: 100vh;
-
-    padding-top: 150px;
+    margin: 0 auto;
+    padding: 130px 0 80px;
 
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.3fr)
-        minmax(300px, 0.7fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
 
     align-items: center;
-
-    gap: 80px;
+    gap: clamp(40px, 6vw, 90px);
 
     position: relative;
+}
+
+.hero > * {
+    min-width: 0;
 }
 
 .system-label {
@@ -827,7 +827,11 @@ h2 span {
 
     overflow: hidden;
 }
-
+.character-card {
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
+}
 .character-card::before {
 
     content: "";
