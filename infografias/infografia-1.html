@@ -309,53 +309,407 @@
         /* =========================================================
            FUENTES — FORMATO IEEE
            ========================================================= */
-        .fuentes {
-            padding: 26px 45px 38px;
-            background: var(--navy-dark);
-            color: #9fbed6;
+<style>
+    /* =========================================================
+       RESET Y VARIABLES
+       ========================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+        --navy:       #1e3a5f;
+        --navy-dark:  #142a45;
+        --teal:       #4a9d9c;
+        --blue-light: #e8f2f8;
+        --gray:       #64748b;
+        --text:       #334155;
+        --border:     #d0dde5;
+        --bg:         #f0f4f7;
+    }
+
+    body {
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+    }
+
+    .infografia {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 10px 40px rgba(0,0,0,.08);
+    }
+
+    /* =========================================================
+       CABECERA
+       ========================================================= */
+    .header {
+        position: relative;
+        background: linear-gradient(135deg, #1a3a5c 0%, #29527d 100%);
+        color: #fff;
+        padding: 40px 45px 45px;
+        overflow: hidden;
+    }
+
+    .header::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        right: 45px;
+        width: 230px;
+        height: 75px;
+        background: rgba(140, 200, 230, 0.3);
+        clip-path: polygon(
+            0% 45%, 6% 30%, 14% 38%, 24% 22%, 36% 30%, 48% 15%,
+            60% 22%, 72% 12%, 84% 20%, 94% 14%, 100% 26%,
+            100% 58%, 92% 62%, 82% 58%, 72% 70%, 60% 66%,
+            50% 78%, 38% 72%, 26% 82%, 16% 76%, 8% 84%, 0% 72%
+        );
+        border-radius: 3px;
+    }
+
+    .header h1 {
+        font-size: 46px;
+        font-weight: 800;
+        letter-spacing: .5px;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .header .subtitle {
+        font-size: 16px;
+        color: #b8d4e8;
+        max-width: 720px;
+        margin-bottom: 22px;
+    }
+
+    .header .autor {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-left: 3px solid var(--teal);
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #d8e8f2;
+        letter-spacing: .5px;
+    }
+
+    .header .autor strong {
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    /* =========================================================
+       TRES COLUMNAS
+       ========================================================= */
+    .columnas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+    }
+
+    .columna {
+        padding: 32px 26px 38px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-right: 1px solid var(--border);
+    }
+
+    .columna:last-child { border-right: 0; }
+
+    .columna-titulo {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding-bottom: 14px;
+        margin-bottom: 4px;
+        border-bottom: 2px solid var(--teal);
+    }
+
+    .columna-titulo .etiqueta {
+        font-size: 11px;
+        color: var(--teal);
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .columna-titulo h2 {
+        font-size: 19px;
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: .3px;
+    }
+
+    /* =========================================================
+       TARJETA
+       ========================================================= */
+    .card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 16px 16px 14px;
+        position: relative;
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(30,58,95,.1);
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 0;
+        width: 3px;
+        height: 32px;
+        border-radius: 0 3px 3px 0;
+        background: var(--teal);
+    }
+
+    .card.cat-fecha::before       { background: #3b82c4; }
+    .card.cat-persona::before     { background: #9b7fc4; }
+    .card.cat-institucion::before { background: #5fb85f; }
+    .card.cat-logro::before       { background: #f5a623; }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 9px;
+        padding-left: 8px;
+    }
+
+    .year-badge {
+        background: var(--navy);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 4px 12px;
+        border-radius: 20px;
+        letter-spacing: .5px;
+    }
+
+    .cat-fecha       .year-badge { background: #3b82c4; }
+    .cat-persona     .year-badge { background: #9b7fc4; }
+    .cat-institucion .year-badge { background: #5fb85f; }
+    .cat-logro       .year-badge { background: #f5a623; }
+
+    .tag {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        border-radius: 3px;
+        background: var(--blue-light);
+        color: var(--navy);
+    }
+
+    .card h3 {
+        font-size: 15px;
+        color: var(--navy);
+        font-weight: 800;
+        margin-bottom: 6px;
+        padding-left: 8px;
+        line-height: 1.25;
+    }
+
+    .card p {
+        font-size: 13px;
+        color: var(--text);
+        padding-left: 8px;
+        line-height: 1.55;
+    }
+
+    .card .cita {
+        display: block;
+        margin-top: 9px;
+        padding-left: 8px;
+        font-size: 11px;
+        color: var(--gray);
+        font-style: italic;
+        letter-spacing: .2px;
+    }
+
+    .card-img {
+        margin-top: 10px;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        border-radius: 6px;
+        object-fit: contain;
+        background: transparent;
+        border: 1px solid var(--border);
+        display: block;
+        padding: 2px;
+        box-sizing: border-box;
+    }
+
+    /* =========================================================
+       BLOQUES FINALES
+       ========================================================= */
+    .bloques-finales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 32px 45px;
+        background: #f8fbfd;
+        border-top: 1px solid var(--border);
+    }
+
+    .bloque {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .bloque h3 {
+        font-size: 14px;
+        color: var(--navy);
+        font-weight: 800;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--teal);
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+
+    .bloque ul { list-style: none; }
+
+    .bloque li {
+        font-size: 13px;
+        color: var(--text);
+        padding: 6px 0;
+        border-bottom: 1px dashed #e8eef3;
+        line-height: 1.4;
+    }
+
+    .bloque li:last-child { border-bottom: 0; }
+
+    .bloque li strong {
+        color: var(--navy);
+        display: block;
+        font-size: 13.5px;
+        margin-bottom: 1px;
+    }
+
+    .bloque li span {
+        color: var(--gray);
+        font-size: 12px;
+    }
+
+    /* =========================================================
+       FUENTES — FORMATO IEEE
+       ========================================================= */
+    .fuentes {
+        padding: 26px 45px 38px;
+        background: var(--navy-dark);
+        color: #9fbed6;
+    }
+
+    .fuentes h3 {
+        font-size: 13px;
+        color: #fff;
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .fuentes ol { padding-left: 22px; }
+
+    .fuentes li {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 6px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 950px) {
+        .columnas { grid-template-columns: 1fr; }
+        .columna {
+            border-right: 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .columna:last-child { border-bottom: 0; }
+        .bloques-finales { grid-template-columns: 1fr; }
+        .header h1 { font-size: 30px; }
+        .header::after { display: none; }
+    }
+
+    @media (max-width: 600px) {
+        .header, .columna, .bloques-finales, .fuentes {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .header h1 { font-size: 24px; }
+        .header .subtitle { font-size: 13px; }
+    }
+
+    /* =========================================================
+       ESTILOS PARA IMPRESIÓN / PDF
+       ========================================================= */
+    @media print {
+
+        @page {
+            size: A4 landscape;
+            margin: 8mm;
         }
 
-        .fuentes h3 {
-            font-size: 11px;
-            color: #fff;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        body {
+            background: #fff;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
-        .fuentes ol { padding-left: 22px; }
-
-        .fuentes li {
-            font-size: 10px;
-            line-height: 1.6;
-            margin-bottom: 5px;
+        .infografia {
+            max-width: 100%;
+            box-shadow: none;
         }
 
-        /* =========================================================
-           RESPONSIVE
-           ========================================================= */
-        @media (max-width: 950px) {
-            .columnas { grid-template-columns: 1fr; }
-            .columna {
-                border-right: 0;
-                border-bottom: 1px solid var(--border);
-            }
-            .columna:last-child { border-bottom: 0; }
-            .bloques-finales { grid-template-columns: 1fr; }
-            .header h1 { font-size: 28px; }
-            .header::after { display: none; }
+        /* Evitar que las tarjetas se partan entre páginas */
+        .card,
+        .bloque {
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
-        @media (max-width: 600px) {
-            .header, .columna, .bloques-finales, .fuentes {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            .header h1 { font-size: 22px; }
-            .header .subtitle { font-size: 12px; }
+        /* Evitar que las columnas se corten */
+        .columna {
+            page-break-inside: avoid;
         }
-    </style>
+
+        /* Tamaños compactos para que quepa todo en una página */
+        .header h1        { font-size: 32px; }
+        .header .subtitle { font-size: 13px; }
+        .columna-titulo h2 { font-size: 15px; }
+        .columna-titulo .etiqueta { font-size: 9px; }
+        .year-badge       { font-size: 11px; padding: 3px 10px; }
+        .tag              { font-size: 8px; }
+        .card h3          { font-size: 12px; }
+        .card p           { font-size: 10px; }
+        .card .cita       { font-size: 9px; }
+        .bloque h3        { font-size: 12px; }
+        .bloque li        { font-size: 10.5px; }
+        .bloque li strong { font-size: 11px; }
+        .bloque li span   { font-size: 9.5px; }
+        .fuentes h3       { font-size: 11px; }
+        .fuentes li       { font-size: 9.5px; }
+    }
+</style>
 </head>
 
 <body>
