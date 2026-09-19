@@ -19,12 +19,9 @@
             --cyan: #22d3ee;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
-        html,
-        body {
+        html, body {
             margin: 0;
             width: 100%;
             height: 100%;
@@ -39,25 +36,17 @@
             overflow: hidden;
         }
 
-        /* =========================
-           TOP BAR
-        ========================= */
-
         .barra {
             height: 76px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-
             padding: 0 32px;
-
             background: rgba(5,5,9,0.92);
             border-bottom: 1px solid var(--border);
-
             position: relative;
             z-index: 10;
-
             backdrop-filter: blur(12px);
         }
 
@@ -68,19 +57,8 @@
             top: 0;
             width: 100%;
             height: 1px;
-
-            background: linear-gradient(
-                90deg,
-                transparent,
-                var(--accent),
-                var(--cyan),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, var(--accent), var(--cyan), transparent);
         }
-
-        /* =========================
-           TITLE
-        ========================= */
 
         .titulo {
             display: flex;
@@ -91,20 +69,14 @@
         .logo {
             width: 38px;
             height: 38px;
-
             display: grid;
             place-items: center;
-
             border: 1px solid var(--accent);
             background: var(--accent-soft);
-
             color: var(--accent);
-
             font-size: 18px;
             font-weight: bold;
-
-            box-shadow:
-                0 0 20px rgba(139,92,246,0.18);
+            box-shadow: 0 0 20px rgba(139,92,246,0.18);
         }
 
         .titulo-texto {
@@ -126,10 +98,6 @@
             text-transform: uppercase;
         }
 
-        /* =========================
-           BUTTONS
-        ========================= */
-
         .acciones {
             display: flex;
             gap: 10px;
@@ -139,31 +107,21 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
             padding: 10px 16px;
-
             border: 1px solid var(--border);
-
             background: var(--panel);
             color: var(--text);
-
             text-decoration: none;
-
             font-size: 11px;
             font-weight: bold;
-
             letter-spacing: 1px;
-
             transition: 0.25s ease;
         }
 
         .boton:hover {
             border-color: var(--accent);
             background: var(--accent-soft);
-
-            box-shadow:
-                0 0 20px rgba(139,92,246,0.15);
-
+            box-shadow: 0 0 20px rgba(139,92,246,0.15);
             transform: translateY(-1px);
         }
 
@@ -176,57 +134,37 @@
             background: rgba(34,211,238,0.08);
         }
 
-        /* =========================
-           PDF AREA
-        ========================= */
-
         .visor-container {
             height: calc(100vh - 76px);
-
             padding: 24px;
-
             position: relative;
         }
 
         .visor-panel {
             width: 100%;
             height: 100%;
-
             position: relative;
-
             border: 1px solid var(--border);
-
             background: #111;
-
             box-shadow:
                 0 0 40px rgba(0,0,0,0.45),
                 inset 0 0 30px rgba(139,92,246,0.03);
-
             overflow: hidden;
         }
-
-        /* =========================
-           HUD CORNERS
-        ========================= */
 
         .visor-panel::before,
         .visor-panel::after {
             content: "";
-
             position: absolute;
-
             width: 30px;
             height: 30px;
-
             pointer-events: none;
-
             z-index: 2;
         }
 
         .visor-panel::before {
             top: -1px;
             left: -1px;
-
             border-top: 2px solid var(--accent);
             border-left: 2px solid var(--accent);
         }
@@ -234,79 +172,46 @@
         .visor-panel::after {
             bottom: -1px;
             right: -1px;
-
             border-bottom: 2px solid var(--cyan);
             border-right: 2px solid var(--cyan);
         }
 
-        /* =========================
-           PDF
-        ========================= */
-
         .visor {
             width: 100%;
             height: 100%;
-
             display: block;
-
             border: none;
-
             background: white;
         }
 
-        /* =========================
-           STATUS
-        ========================= */
-
         .estado {
             position: absolute;
-
             bottom: 8px;
             left: 32px;
-
             z-index: 5;
-
             padding: 6px 10px;
-
             background: rgba(5,5,9,0.85);
-
             border: 1px solid var(--border);
-
             color: var(--text-muted);
-
             font-size: 9px;
             letter-spacing: 1.5px;
-
             pointer-events: none;
         }
 
-        .estado span {
-            color: var(--cyan);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        .estado span { color: var(--cyan); }
 
         @media (max-width: 700px) {
-
-            body {
-                overflow: auto;
-            }
+            body { overflow: auto; }
 
             .barra {
                 height: auto;
                 min-height: 76px;
-
                 padding: 14px 16px;
-
                 flex-direction: column;
                 align-items: stretch;
             }
 
-            .titulo {
-                justify-content: center;
-            }
+            .titulo { justify-content: center; }
 
             .acciones {
                 justify-content: center;
@@ -323,9 +228,7 @@
                 justify-content: center;
             }
 
-            .estado {
-                display: none;
-            }
+            .estado { display: none; }
         }
     </style>
 </head>
@@ -335,38 +238,28 @@
     <header class="barra">
 
         <div class="titulo">
-
-            <div class="logo">
-                //
-            </div>
-
+            <div class="logo">//</div>
             <div class="titulo-texto">
-                <div class="titulo-principal">
-                    DATA ARCHIVE
-                </div>
-
-                <div class="titulo-secundario">
+                <div class="titulo-principal">DATA ARCHIVE</div>
+                <div class="titulo-secundario" id="subtitulo">
                     Informe académico // Portafolio digital
                 </div>
-            </div
-                
+            </div>
         </div>
 
-
         <div class="acciones">
-
             <a href="index.html" class="boton">
                 ← VOLVER
             </a>
 
             <a
                 href="informe.pdf"
-                download="informe.pdf"
+                download
                 class="boton boton-descarga"
+                id="boton-descarga"
             >
-                ↓ DESCARGAR INFORME
+                ↓ DESCARGAR
             </a>
-
         </div>
 
     </header>
@@ -379,7 +272,8 @@
             <iframe
                 class="visor"
                 src="informe.pdf"
-                title="Visor del informe académico">
+                title="Visor del informe académico"
+                id="iframe-pdf">
             </iframe>
 
             <div class="estado">
@@ -391,5 +285,39 @@
 
     </main>
 
-</body>
+
+    <!-- =========================================================
+         SCRIPT: lee el parámetro ?pdf= de la URL y carga ese PDF.
+         Si no hay parámetro, usa "informe.pdf" por defecto.
+         ========================================================= -->
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var pdf = params.get("pdf") || "informe.pdf";
+            var titulo = params.get("titulo") || "Informe académico";
+
+            // Actualiza el iframe
+            var iframe = document.getElementById("iframe-pdf");
+            if (iframe) {
+                iframe.src = pdf;
+                iframe.title = titulo;
+            }
+
+            // Actualiza el botón de descarga
+            var boton = document.getElementById("boton-descarga");
+            if (boton) {
+                boton.href = pdf;
+                // El atributo download fuerza descarga con el nombre del archivo
+                boton.setAttribute("download", pdf.split("/").pop());
+            }
+
+            // Actualiza el subtítulo del header
+            var sub = document.getElementById("subtitulo");
+            if (sub && params.get("titulo")) {
+                sub.textContent = titulo + " // Portafolio digital";
+            }
+        })();
+    </script>
+
+</body> 
 </html>
