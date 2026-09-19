@@ -4,25 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía 1</title>
+    <title>Infografía — Historia de la Informática en Cuba</title>
 
     <!--
     ============================================================
-    GUÍA RÁPIDA DE ESTE ARCHIVO
+    ESTRUCTURA SEGÚN LA TAREA (imagen 2)
     ============================================================
-    - CABECERA: el título y subtítulo generales.
-    - TRES COLUMNAS: cada una fluye de arriba a abajo.
-        · Columna 1: 8 tarjetas
-        · Columna 2: 6 tarjetas
-        · Columna 3: 8 tarjetas
-    - Cada TARJETA tiene:
-        · year-badge  → el año
-        · tag         → la categoría (HARDWARE, POLÍTICAS, etc.)
-        · <h3>        → título del hito
-        · <p>         → descripción del hito
-        · <img>       → OPCIONAL. Solo 6 tarjetas tienen imagen.
-    - BLOQUES FINALES: tres listas.
-    - FUENTES: al menos 3 (aquí hay 7 huecos).
+    · Fechas clave          → Columna 1
+    · Personas relevantes   → Columna 2
+    · Instituciones y logros → Columna 3
+    · Al menos 3 fuentes en formato IEEE
+    · Nombre y apellidos visibles (firma)
+
+    ELEMENTOS DE UNA BUENA INFOGRAFÍA (imágenes 3 y 4)
+    ============================================================
+    · Propósito claro          → cabecera con título y subtítulo
+    · Audiencia definida       → lenguaje directo y formal
+    · Rigor en la investigación→ cada tarjeta cita su fuente
+    · Jerarquía visual         → badge de año > título > texto
+    · 2–3 colores principales  → navy, teal, blanco (y acentos)
+    · Citas en formato IEEE    → sección de fuentes
+    · Firma                    → bloque "Autor" en la cabecera
     ============================================================
     -->
 
@@ -59,12 +61,13 @@
 
         /* =========================================================
            CABECERA
+           Título + subtítulo + firma del autor
            ========================================================= */
         .header {
             position: relative;
             background: linear-gradient(135deg, #1a3a5c 0%, #29527d 100%);
             color: #fff;
-            padding: 40px 45px 50px;
+            padding: 40px 45px 45px;
             overflow: hidden;
         }
 
@@ -86,7 +89,7 @@
         }
 
         .header h1 {
-            font-size: 42px;
+            font-size: 40px;
             font-weight: 800;
             letter-spacing: .5px;
             line-height: 1.1;
@@ -97,11 +100,35 @@
         .header .subtitle {
             font-size: 14px;
             color: #b8d4e8;
-            max-width: 750px;
+            max-width: 720px;
+            margin-bottom: 22px;
+        }
+
+        /* Firma del autor (requisito de la tarea) */
+        .header .autor {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--teal);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #d8e8f2;
+            letter-spacing: .5px;
+        }
+
+        .header .autor strong {
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         /* =========================================================
            TRES COLUMNAS
+           Columna 1: Fechas clave
+           Columna 2: Personas relevantes
+           Columna 3: Instituciones y logros
            ========================================================= */
         .columnas {
             display: grid;
@@ -110,7 +137,7 @@
         }
 
         .columna {
-            padding: 35px 28px 40px;
+            padding: 32px 26px 38px;
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -123,25 +150,26 @@
         .columna-titulo {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            padding-bottom: 16px;
-            margin-bottom: 6px;
+            gap: 4px;
+            padding-bottom: 14px;
+            margin-bottom: 4px;
             border-bottom: 2px solid var(--teal);
         }
 
+        .columna-titulo .etiqueta {
+            font-size: 9px;
+            color: var(--teal);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
         .columna-titulo h2 {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--navy);
             font-weight: 800;
             line-height: 1.2;
             text-transform: uppercase;
-        }
-
-        .columna-titulo .rango {
-            font-size: 11px;
-            color: var(--teal);
-            font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: .3px;
         }
 
         /* =========================================================
@@ -151,7 +179,7 @@
             background: #fff;
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 16px 16px 14px;
+            padding: 15px 15px 13px;
             position: relative;
             transition: transform .2s ease, box-shadow .2s ease;
         }
@@ -161,7 +189,6 @@
             box-shadow: 0 8px 20px rgba(30,58,95,.1);
         }
 
-        /* Franja lateral de color según categoría */
         .card::before {
             content: "";
             position: absolute;
@@ -173,12 +200,11 @@
             background: var(--teal);
         }
 
-        .card.cat-hardware::before    { background: #3b82c4; }
-        .card.cat-politicas::before   { background: #e74c3c; }
-        .card.cat-hito::before        { background: #5fb85f; }
-        .card.cat-institucion::before { background: #9b7fc4; }
-        .card.cat-formacion::before   { background: #f5a623; }
-        .card.cat-tendencia::before   { background: #26b8c4; }
+        /* Colores según categoría */
+        .card.cat-fecha::before        { background: #3b82c4; }
+        .card.cat-persona::before      { background: #9b7fc4; }
+        .card.cat-institucion::before  { background: #5fb85f; }
+        .card.cat-logro::before        { background: #f5a623; }
 
         .card-top {
             display: flex;
@@ -199,12 +225,10 @@
             letter-spacing: .5px;
         }
 
-        .cat-hardware    .year-badge { background: #3b82c4; }
-        .cat-politicas   .year-badge { background: #e74c3c; }
-        .cat-hito        .year-badge { background: #5fb85f; }
-        .cat-institucion .year-badge { background: #9b7fc4; }
-        .cat-formacion   .year-badge { background: #f5a623; }
-        .cat-tendencia   .year-badge { background: #26b8c4; }
+        .cat-fecha       .year-badge { background: #3b82c4; }
+        .cat-persona     .year-badge { background: #9b7fc4; }
+        .cat-institucion .year-badge { background: #5fb85f; }
+        .cat-logro       .year-badge { background: #f5a623; }
 
         .tag {
             font-size: 8px;
@@ -218,26 +242,37 @@
         }
 
         .card h3 {
-            font-size: 13.5px;
+            font-size: 13px;
             color: var(--navy);
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             padding-left: 8px;
             line-height: 1.25;
         }
 
         .card p {
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text);
             padding-left: 8px;
             line-height: 1.5;
         }
 
+        /* Cita de la fuente dentro de la tarjeta (regla de rigor) */
+        .card .cita {
+            display: block;
+            margin-top: 8px;
+            padding-left: 8px;
+            font-size: 9px;
+            color: var(--gray);
+            font-style: italic;
+            letter-spacing: .2px;
+        }
+
         /* Imagen opcional dentro de la tarjeta */
         .card-img {
-            margin-top: 12px;
+            margin-top: 10px;
             width: 100%;
-            height: 90px;
+            height: 80px;
             border-radius: 6px;
             object-fit: cover;
             background: linear-gradient(135deg, #eaf2f8, #d6e6f0);
@@ -246,13 +281,13 @@
         }
 
         /* =========================================================
-           BLOQUES FINALES EN 3 COLUMNAS
+           BLOQUES FINALES
            ========================================================= */
         .bloques-finales {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 35px 45px;
+            padding: 32px 45px;
             background: #f8fbfd;
             border-top: 1px solid var(--border);
         }
@@ -265,10 +300,10 @@
         }
 
         .bloque h3 {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--navy);
             font-weight: 800;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--teal);
             text-transform: uppercase;
@@ -278,9 +313,9 @@
         .bloque ul { list-style: none; }
 
         .bloque li {
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text);
-            padding: 6px 0;
+            padding: 5px 0;
             border-bottom: 1px dashed #e8eef3;
             line-height: 1.4;
         }
@@ -290,29 +325,29 @@
         .bloque li strong {
             color: var(--navy);
             display: block;
-            font-size: 12px;
+            font-size: 11.5px;
             margin-bottom: 1px;
         }
 
         .bloque li span {
             color: var(--gray);
-            font-size: 10.5px;
+            font-size: 10px;
         }
 
         /* =========================================================
-           FUENTES
+           FUENTES EN FORMATO IEEE
            ========================================================= */
         .fuentes {
-            padding: 28px 45px 40px;
+            padding: 26px 45px 38px;
             background: var(--navy-dark);
             color: #9fbed6;
         }
 
         .fuentes h3 {
-            font-size: 12px;
+            font-size: 11px;
             color: #fff;
             font-weight: 800;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -320,9 +355,9 @@
         .fuentes ol { padding-left: 22px; }
 
         .fuentes li {
-            font-size: 10.5px;
+            font-size: 10px;
             line-height: 1.6;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         /* =========================================================
@@ -336,7 +371,7 @@
             }
             .columna:last-child { border-bottom: 0; }
             .bloques-finales { grid-template-columns: 1fr; }
-            .header h1 { font-size: 30px; }
+            .header h1 { font-size: 28px; }
             .header::after { display: none; }
         }
 
@@ -357,293 +392,325 @@
 
     <!-- =========================================================
          CABECERA
-         Cambia el título y el subtítulo.
+         · Título y subtítulo → propósito de la infografía
+         · Firma → requisito obligatorio de la tarea
          ========================================================= -->
     <header class="header">
         <h1>TÍTULO PRINCIPAL DE LA INFOGRAFÍA</h1>
         <p class="subtitle">
             Subtítulo o frase que resume el contenido de la infografía.
         </p>
+
+        <div class="autor">
+            <span>AUTOR:</span>
+            <strong>NOMBRE Y APELLIDOS</strong>
+        </div>
     </header>
 
 
     <!-- =========================================================
          TRES COLUMNAS
-         Cada columna fluye de arriba a abajo.
+         · Columna 1 → Fechas clave (timeline de la informática)
+         · Columna 2 → Personas relevantes
+         · Columna 3 → Instituciones y logros
          ========================================================= -->
     <div class="columnas">
 
 
         <!-- =====================================================
-             COLUMNA 1 — 8 TARJETAS
-             Tarjetas 1 y 4 llevan imagen. El resto no.
+             COLUMNA 1 — FECHAS CLAVE
+             8 tarjetas con hitos cronológicos.
+             Tarjetas 1 y 4 llevan imagen (opcional).
              ===================================================== -->
         <div class="columna">
 
             <div class="columna-titulo">
-                <h2>TÍTULO DE LA SECCIÓN 1</h2>
-                <span class="rango">AAAA – AAAA</span>
+                <span class="etiqueta">LÍNEA DE TIEMPO</span>
+                <h2>Fechas clave</h2>
             </div>
 
-            <!-- Tarjeta 1 · CON imagen -->
-            <article class="card cat-hardware">
+            <!-- Fecha 1 · CON imagen -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 1</h3>
-                <p>Descripción breve del hito. Sustituye este texto por
-                   la información que quieras mostrar.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [1]</span>
                 <img class="card-img" src="imagen_1.jpg"
                      alt="Descripción de la imagen 1">
             </article>
 
-            <!-- Tarjeta 2 -->
-            <article class="card cat-politicas">
+            <!-- Fecha 2 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 2</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- Tarjeta 3 -->
-            <article class="card cat-institucion">
+            <!-- Fecha 3 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 3</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- Tarjeta 4 · CON imagen -->
-            <article class="card cat-hito">
+            <!-- Fecha 4 · CON imagen -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 4</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [2]</span>
                 <img class="card-img" src="imagen_2.jpg"
                      alt="Descripción de la imagen 2">
             </article>
 
-            <!-- Tarjeta 5 -->
-            <article class="card cat-hardware">
+            <!-- Fecha 5 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 5</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Tarjeta 6 -->
-            <article class="card cat-hito">
+            <!-- Fecha 6 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 6</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Tarjeta 7 -->
-            <article class="card cat-hito">
+            <!-- Fecha 7 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 7</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
-            <!-- Tarjeta 8 -->
-            <article class="card cat-hardware">
+            <!-- Fecha 8 -->
+            <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito 8</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del hito</h3>
+                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
         </div>
 
 
         <!-- =====================================================
-             COLUMNA 2 — 6 TARJETAS
-             Tarjetas 1 y 3 llevan imagen. El resto no.
+             COLUMNA 2 — PERSONAS RELEVANTES
+             6 tarjetas con figuras clave.
+             Tarjetas 1 y 3 llevan imagen (opcional).
              ===================================================== -->
         <div class="columna">
 
             <div class="columna-titulo">
-                <h2>TÍTULO DE LA SECCIÓN 2</h2>
-                <span class="rango">AAAA – AAAA</span>
+                <span class="etiqueta">FIGURAS CLAVE</span>
+                <h2>Personas relevantes</h2>
             </div>
 
-            <!-- Tarjeta 1 · CON imagen -->
-            <article class="card cat-politicas">
+            <!-- Persona 1 · CON imagen -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 1</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [1]</span>
                 <img class="card-img" src="imagen_3.jpg"
-                     alt="Descripción de la imagen 3">
+                     alt="Retrato o referencia">
             </article>
 
-            <!-- Tarjeta 2 -->
-            <article class="card cat-institucion">
+            <!-- Persona 2 -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 2</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- Tarjeta 3 · CON imagen -->
-            <article class="card cat-formacion">
+            <!-- Persona 3 · CON imagen -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 3</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [2]</span>
                 <img class="card-img" src="imagen_4.jpg"
-                     alt="Descripción de la imagen 4">
+                     alt="Retrato o referencia">
             </article>
 
-            <!-- Tarjeta 4 -->
-            <article class="card cat-institucion">
+            <!-- Persona 4 -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 4</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- Tarjeta 5 -->
-            <article class="card cat-hito">
+            <!-- Persona 5 -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 5</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Tarjeta 6 -->
-            <article class="card cat-hito">
+            <!-- Persona 6 -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="year-badge">NOMBRE</span>
+                    <span class="tag">ROL</span>
                 </div>
-                <h3>Título del hito 6</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre completo</h3>
+                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
         </div>
 
 
         <!-- =====================================================
-             COLUMNA 3 — 8 TARJETAS
-             Tarjetas 1 y 5 llevan imagen. El resto no.
+             COLUMNA 3 — INSTITUCIONES Y LOGROS
+             8 tarjetas. Mezcla de instituciones y logros.
+             Tarjetas 1 y 5 llevan imagen (opcional).
              ===================================================== -->
         <div class="columna">
 
             <div class="columna-titulo">
-                <h2>TÍTULO DE LA SECCIÓN 3</h2>
-                <span class="rango">AAAA – AAAA</span>
+                <span class="etiqueta">IMPACTO</span>
+                <h2>Instituciones y logros</h2>
             </div>
 
-            <!-- Tarjeta 1 · CON imagen -->
-            <article class="card cat-politicas">
+            <!-- Institución 1 · CON imagen -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Título del hito 1</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre de la institución</h3>
+                <p>Descripción de su papel en la informática cubana.</p>
+                <span class="cita">Fuente: [1]</span>
                 <img class="card-img" src="imagen_5.jpg"
                      alt="Descripción de la imagen 5">
             </article>
 
-            <!-- Tarjeta 2 -->
-            <article class="card cat-hito">
+            <!-- Institución 2 -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Título del hito 2</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre de la institución</h3>
+                <p>Descripción de su papel en la informática cubana.</p>
+                <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- Tarjeta 3 -->
-            <article class="card cat-hito">
+            <!-- Institución 3 -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Título del hito 3</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre de la institución</h3>
+                <p>Descripción de su papel en la informática cubana.</p>
+                <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- Tarjeta 4 -->
-            <article class="card cat-hito">
+            <!-- Institución 4 -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Título del hito 4</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Nombre de la institución</h3>
+                <p>Descripción de su papel en la informática cubana.</p>
+                <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Tarjeta 5 · CON imagen -->
-            <article class="card cat-hito">
+            <!-- Logro 1 · CON imagen -->
+            <article class="card cat-logro">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">LOGRO</span>
                 </div>
-                <h3>Título del hito 5</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del logro</h3>
+                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
+                <span class="cita">Fuente: [3]</span>
                 <img class="card-img" src="imagen_6.jpg"
                      alt="Descripción de la imagen 6">
             </article>
 
-            <!-- Tarjeta 6 -->
-            <article class="card cat-tendencia">
+            <!-- Logro 2 -->
+            <article class="card cat-logro">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">LOGRO</span>
                 </div>
-                <h3>Título del hito 6</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del logro</h3>
+                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
+                <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Tarjeta 7 -->
-            <article class="card cat-politicas">
+            <!-- Logro 3 -->
+            <article class="card cat-logro">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">LOGRO</span>
                 </div>
-                <h3>Título del hito 7</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del logro</h3>
+                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
-            <!-- Tarjeta 8 -->
-            <article class="card cat-hito">
+            <!-- Logro 4 -->
+            <article class="card cat-logro">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
-                    <span class="tag">CATEGORÍA</span>
+                    <span class="tag">LOGRO</span>
                 </div>
-                <h3>Título del hito 8</h3>
-                <p>Descripción breve del hito.</p>
+                <h3>Título del logro</h3>
+                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
         </div>
@@ -652,70 +719,70 @@
 
 
     <!-- =========================================================
-         BLOQUES FINALES — TRES LISTAS
-         Bloque 1: personas / figuras
-         Bloque 2: instituciones
-         Bloque 3: logros o datos
+         BLOQUES FINALES
+         · Bloque 1 → Personas (resumen)
+         · Bloque 2 → Instituciones (resumen)
+         · Bloque 3 → Logros (resumen)
          ========================================================= -->
     <section class="bloques-finales">
 
-        <!-- Bloque 1 -->
+        <!-- Personas -->
         <div class="bloque">
-            <h3>◆ TÍTULO DEL BLOQUE 1</h3>
+            <h3>◆ Personas destacadas</h3>
             <ul>
                 <li>
                     <strong>Nombre 1</strong>
-                    <span>Descripción breve</span>
+                    <span>Rol o aporte breve</span>
                 </li>
                 <li>
                     <strong>Nombre 2</strong>
-                    <span>Descripción breve</span>
+                    <span>Rol o aporte breve</span>
                 </li>
                 <li>
                     <strong>Nombre 3</strong>
-                    <span>Descripción breve</span>
+                    <span>Rol o aporte breve</span>
                 </li>
                 <li>
                     <strong>Nombre 4</strong>
-                    <span>Descripción breve</span>
+                    <span>Rol o aporte breve</span>
                 </li>
                 <li>
                     <strong>Nombre 5</strong>
-                    <span>Descripción breve</span>
+                    <span>Rol o aporte breve</span>
                 </li>
             </ul>
         </div>
 
-        <!-- Bloque 2 -->
+        <!-- Instituciones -->
         <div class="bloque">
-            <h3>◆ TÍTULO DEL BLOQUE 2</h3>
+            <h3>◆ Instituciones destacadas</h3>
             <ul>
                 <li>
-                    <strong>Elemento 1</strong>
-                    <span>Descripción breve</span>
+                    <strong>Siglas</strong>
+                    <span>Nombre completo y función</span>
                 </li>
                 <li>
-                    <strong>Elemento 2</strong>
-                    <span>Descripción breve</span>
+                    <strong>Siglas</strong>
+                    <span>Nombre completo y función</span>
                 </li>
                 <li>
-                    <strong>Elemento 3</strong>
-                    <span>Descripción breve</span>
+                    <strong>Siglas</strong>
+                    <span>Nombre completo y función</span>
                 </li>
                 <li>
-                    <strong>Elemento 4</strong>
-                    <span>Descripción breve</span>
+                    <strong>Siglas</strong>
+                    <span>Nombre completo y función</span>
                 </li>
                 <li>
-                    <strong>Elemento 5</strong>
-                    <span>Descripción breve</span>
+                    <strong>Siglas</strong>
+                    <span>Nombre completo y función</span>
                 </li>
             </ul>
         </div>
 
-        <!-- Bloque 3 -->
+        <!-- Logros -->
         <div class="bloque">
-            <h3>◆ TÍTULO DEL BLOQUE 3</h3>
+            <h3>◆ Logros principales</h3>
             <ul>
                 <li>Logro o dato 1.</li>
                 <li>Logro o dato 2.</li>
@@ -729,19 +796,19 @@
 
 
     <!-- =========================================================
-         FUENTES
-         Mínimo 3 fuentes. Aquí hay 7 huecos por si quieres poner más.
+         FUENTES — FORMATO IEEE
+         Mínimo 3. Aquí hay 6 huecos.
+         Cada "[n]" en las tarjetas se corresponde con esta lista.
          ========================================================= -->
     <footer class="fuentes">
         <h3>Fuentes</h3>
         <ol>
-            <li>Autor, A. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, B. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, C. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, D. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, E. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, F. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
-            <li>Autor, G. (Año). "Título del artículo". Revista, vol. X, no. Y, pp. Z-Z.</li>
+            <li>[1] Autor, A., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[2] Autor, B., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[3] Autor, C., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[4] Autor, D., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[5] Autor, E., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[6] Autor, F., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
         </ol>
     </footer>
 
