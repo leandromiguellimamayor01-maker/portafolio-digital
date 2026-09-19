@@ -1747,6 +1747,52 @@ h2 span {
     letter-spacing: 2px;
 }
 /* =========================================================
+   INFORME TÉCNICO (PDF) dentro del archivo
+   ========================================================= */
+
+.reporte-item {
+    border-color: var(--border-bright);
+}
+
+.reporte-frame {
+    background: linear-gradient(135deg, #0d131d, #111925);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.reporte-preview {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.reporte-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 20px rgba(105, 245, 208, 0.4));
+}
+
+.reporte-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.reporte-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.reporte-item .infografia-open {
+    color: var(--primary);
+}
+/* =========================================================
    INFOGRAPHICS (HTML EMBEDDED)
    ========================================================= */
 
