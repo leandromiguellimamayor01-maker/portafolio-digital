@@ -6,25 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolución de los Sistemas Operativos y su Impacto en la Usabilidad</title>
 
-    <!--
-    ============================================================
-    ESTRUCTURA POR ÉPOCAS DE INTERFAZ
-    ============================================================
-    COLUMNA 1 — Primeras interfaces (CLI)
-        1956 → 1969 → 1970 → 1980
-    COLUMNA 2 — Interfaces gráficas (GUI)
-        1973 → 1981 → 1984 → 1985 → 1995
-    COLUMNA 3 — Interfaces modernas
-        2007 → 2008 → 2023 → 2026
-
-    PALETA 1 — Moderna/cálida
-    · Fondo: crema suave #faf6f0
-    · Principal: morado profundo #4a3f8f
-    · Acento: coral #e8734a
-    · Texto: gris oscuro #2d2a3e
-    ============================================================
-    -->
-
     <style>
         /* =========================================================
            RESET Y VARIABLES
@@ -48,34 +29,34 @@
             font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: var(--crema);
             color: var(--texto);
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .infografia {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             background: var(--blanco);
             box-shadow: 0 10px 40px rgba(0,0,0,.08);
         }
 
         /* =========================================================
-           CABECERA
+           CABECERA — compacta
            ========================================================= */
         .header {
             position: relative;
             background: linear-gradient(135deg, #4a3f8f 0%, #362d6b 100%);
             color: #fff;
-            padding: 40px 45px 45px;
+            padding: 22px 35px 24px;
             overflow: hidden;
         }
 
         .header::after {
             content: "";
             position: absolute;
-            top: 25px;
-            right: 45px;
-            width: 220px;
-            height: 80px;
+            top: 15px;
+            right: 35px;
+            width: 170px;
+            height: 55px;
             background: rgba(232, 115, 74, 0.3);
             clip-path: polygon(
                 0% 50%, 8% 35%, 18% 45%, 30% 25%, 45% 35%, 60% 20%,
@@ -86,30 +67,30 @@
         }
 
         .header h1 {
-            font-size: 38px;
+            font-size: 30px;
             font-weight: 800;
             letter-spacing: .5px;
             line-height: 1.1;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .header .subtitle {
-            font-size: 15px;
+            font-size: 13px;
             color: #c8c0e0;
-            max-width: 750px;
-            margin-bottom: 22px;
+            max-width: 720px;
+            margin-bottom: 14px;
         }
 
         .header .autor {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: rgba(255, 255, 255, 0.08);
             border-left: 3px solid var(--coral);
-            padding: 8px 16px;
+            padding: 5px 12px;
             border-radius: 4px;
-            font-size: 13px;
+            font-size: 11px;
             color: #d8d0e8;
             letter-spacing: .5px;
         }
@@ -130,10 +111,10 @@
         }
 
         .columna {
-            padding: 32px 26px 38px;
+            padding: 20px 18px 22px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 8px;
             border-right: 1px solid var(--borde);
         }
 
@@ -142,57 +123,56 @@
         .columna-titulo {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            padding-bottom: 14px;
-            margin-bottom: 4px;
+            gap: 2px;
+            padding-bottom: 8px;
+            margin-bottom: 2px;
             border-bottom: 2px solid var(--coral);
         }
 
         .columna-titulo .etiqueta {
-            font-size: 11px;
+            font-size: 9px;
             color: var(--coral);
             font-weight: 800;
             letter-spacing: 2px;
         }
 
         .columna-titulo h2 {
-            font-size: 19px;
+            font-size: 15px;
             color: var(--morado);
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
             text-transform: uppercase;
             letter-spacing: .3px;
         }
 
         /* =========================================================
-           TARJETA
+           TARJETA — compacta
            ========================================================= */
         .card {
             background: var(--blanco);
             border: 1px solid var(--borde);
-            border-radius: 12px;
-            padding: 18px 18px 16px;
+            border-radius: 8px;
+            padding: 10px 12px 10px;
             position: relative;
             transition: transform .2s ease, box-shadow .2s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(74, 63, 143, .12);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(74, 63, 143, .12);
         }
 
         .card::before {
             content: "";
             position: absolute;
-            top: 16px;
+            top: 10px;
             left: 0;
-            width: 4px;
-            height: 36px;
-            border-radius: 0 4px 4px 0;
+            width: 3px;
+            height: 26px;
+            border-radius: 0 3px 3px 0;
             background: var(--coral);
         }
 
-        /* Colores según categoría */
         .card.cat-cli::before       { background: #6b6580; }
         .card.cat-gui::before       { background: #4a3f8f; }
         .card.cat-moderno::before   { background: #e8734a; }
@@ -201,17 +181,17 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 8px;
-            margin-bottom: 10px;
-            padding-left: 10px;
+            gap: 6px;
+            margin-bottom: 5px;
+            padding-left: 8px;
         }
 
         .year-badge {
             background: var(--morado);
             color: #fff;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 800;
-            padding: 4px 12px;
+            padding: 2px 9px;
             border-radius: 20px;
             letter-spacing: .5px;
         }
@@ -221,64 +201,63 @@
         .cat-moderno .year-badge { background: #e8734a; }
 
         .tag {
-            font-size: 9px;
+            font-size: 7px;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 2px 6px;
+            border-radius: 3px;
             background: var(--crema-dark);
             color: var(--morado);
         }
 
         .card h3 {
-            font-size: 15px;
+            font-size: 12px;
             color: var(--morado);
             font-weight: 800;
-            margin-bottom: 6px;
-            padding-left: 10px;
-            line-height: 1.25;
+            margin-bottom: 3px;
+            padding-left: 8px;
+            line-height: 1.2;
         }
 
         .card p {
-            font-size: 13px;
+            font-size: 10.5px;
             color: var(--texto);
-            padding-left: 10px;
-            line-height: 1.55;
+            padding-left: 8px;
+            line-height: 1.45;
         }
 
         .card .cita {
             display: block;
-            margin-top: 9px;
-            padding-left: 10px;
-            font-size: 11px;
+            margin-top: 5px;
+            padding-left: 8px;
+            font-size: 8.5px;
             color: var(--gris);
             font-style: italic;
             letter-spacing: .2px;
         }
 
         .card-img {
-            margin-top: 10px;
+            margin-top: 6px;
             width: 100%;
             height: auto;
-            max-height: 200px;
-            border-radius: 8px;
+            max-height: 90px;
+            border-radius: 5px;
             object-fit: contain;
             background: transparent;
             border: 1px solid var(--borde);
             display: block;
             padding: 2px;
-            box-sizing: border-box;
         }
 
         /* =========================================================
-           BLOQUES FINALES
+           BLOQUES FINALES — compactos
            ========================================================= */
         .bloques-finales {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 32px 45px;
+            gap: 14px;
+            padding: 20px 35px;
             background: #f8f4ee;
             border-top: 1px solid var(--borde);
         }
@@ -286,16 +265,16 @@
         .bloque {
             background: var(--blanco);
             border: 1px solid var(--borde);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 14px;
         }
 
         .bloque h3 {
-            font-size: 14px;
+            font-size: 11px;
             color: var(--morado);
             font-weight: 800;
-            margin-bottom: 12px;
-            padding-bottom: 10px;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
             border-bottom: 2px solid var(--coral);
             text-transform: uppercase;
             letter-spacing: .5px;
@@ -304,11 +283,11 @@
         .bloque ul { list-style: none; }
 
         .bloque li {
-            font-size: 13px;
+            font-size: 10.5px;
             color: var(--texto);
-            padding: 6px 0;
+            padding: 3px 0;
             border-bottom: 1px dashed #e8e0f0;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .bloque li:last-child { border-bottom: 0; }
@@ -316,39 +295,39 @@
         .bloque li strong {
             color: var(--morado);
             display: block;
-            font-size: 13.5px;
+            font-size: 11px;
             margin-bottom: 1px;
         }
 
         .bloque li span {
             color: var(--gris);
-            font-size: 12px;
+            font-size: 9.5px;
         }
 
         /* =========================================================
-           FUENTES — FORMATO IEEE
+           FUENTES — compactas
            ========================================================= */
         .fuentes {
-            padding: 26px 45px 38px;
+            padding: 18px 35px 22px;
             background: var(--morado-dark);
             color: #b8b0d0;
         }
 
         .fuentes h3 {
-            font-size: 13px;
+            font-size: 11px;
             color: #fff;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .fuentes ol { padding-left: 22px; }
+        .fuentes ol { padding-left: 20px; }
 
         .fuentes li {
-            font-size: 12px;
-            line-height: 1.6;
-            margin-bottom: 6px;
+            font-size: 10px;
+            line-height: 1.5;
+            margin-bottom: 4px;
         }
 
         /* =========================================================
@@ -362,26 +341,26 @@
             }
             .columna:last-child { border-bottom: 0; }
             .bloques-finales { grid-template-columns: 1fr; }
-            .header h1 { font-size: 28px; }
+            .header h1 { font-size: 24px; }
             .header::after { display: none; }
         }
 
         @media (max-width: 600px) {
             .header, .columna, .bloques-finales, .fuentes {
-                padding-left: 20px;
-                padding-right: 20px;
+                padding-left: 16px;
+                padding-right: 16px;
             }
-            .header h1 { font-size: 22px; }
-            .header .subtitle { font-size: 13px; }
+            .header h1 { font-size: 20px; }
+            .header .subtitle { font-size: 12px; }
         }
 
         /* =========================================================
-           ESTILOS PARA IMPRESIÓN
+           IMPRESIÓN
            ========================================================= */
         @media print {
             @page {
                 size: A4 landscape;
-                margin: 8mm;
+                margin: 6mm;
             }
 
             body {
@@ -390,42 +369,22 @@
                 print-color-adjust: exact;
             }
 
-            .infografia { max-width: 100%; box-shadow: none; }
+            .infografia {
+                max-width: 100%;
+                box-shadow: none;
+            }
 
-            .card, .bloque {
+            .card, .bloque, .columna {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
 
-            .columna { page-break-inside: avoid; }
-
-            .header h1        { font-size: 30px; }
-            .header .subtitle { font-size: 12px; }
-            .columna-titulo h2 { font-size: 15px; }
-            .columna-titulo .etiqueta { font-size: 9px; }
-            .year-badge       { font-size: 11px; padding: 3px 10px; }
-            .tag              { font-size: 8px; }
-            .card h3          { font-size: 12px; }
-            .card p           { font-size: 10px; }
-            .card .cita       { font-size: 9px; }
-            .bloque h3        { font-size: 12px; }
-            .bloque li        { font-size: 10.5px; }
-            .bloque li strong { font-size: 11px; }
-            .bloque li span   { font-size: 9.5px; }
-            .fuentes h3       { font-size: 11px; }
-            .fuentes li       { font-size: 9.5px; }
-
-            /* Forzar 3 columnas al imprimir */
-            .columnas {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
+            .columnas { grid-template-columns: repeat(3, 1fr) !important; }
             .columna {
                 border-right: 1px solid var(--borde) !important;
                 border-bottom: 0 !important;
             }
-            .bloques-finales {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
+            .bloques-finales { grid-template-columns: repeat(3, 1fr) !important; }
             .header::after { display: block !important; }
         }
     </style>
@@ -458,10 +417,7 @@
     <div class="columnas">
 
 
-        <!-- =====================================================
-             COLUMNA 1 — PRIMERAS INTERFACES (CLI)
-             1956 → 1969 → 1970 → 1980
-             ===================================================== -->
+        <!-- COLUMNA 1 — PRIMERAS INTERFACES (CLI) -->
         <div class="columna">
 
             <div class="columna-titulo">
@@ -469,7 +425,6 @@
                 <h2>Primeras interfaces (CLI)</h2>
             </div>
 
-            <!-- 1956 · Primer sistema operativo -->
             <article class="card cat-cli">
                 <div class="card-top">
                     <span class="year-badge">1956</span>
@@ -483,7 +438,6 @@
                 <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- 1969 · Nace UNIX -->
             <article class="card cat-cli">
                 <div class="card-top">
                     <span class="year-badge">1969</span>
@@ -497,7 +451,6 @@
                 <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- 1970 · Interacción por línea de comandos -->
             <article class="card cat-cli">
                 <div class="card-top">
                     <span class="year-badge">1970</span>
@@ -511,7 +464,6 @@
                 <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- 1980 · MS-DOS -->
             <article class="card cat-cli">
                 <div class="card-top">
                     <span class="year-badge">1980</span>
@@ -528,10 +480,7 @@
         </div>
 
 
-        <!-- =====================================================
-             COLUMNA 2 — INTERFACES GRÁFICAS (GUI)
-             1973 → 1981 → 1984 → 1985 → 1995
-             ===================================================== -->
+        <!-- COLUMNA 2 — INTERFACES GRÁFICAS (GUI) -->
         <div class="columna">
 
             <div class="columna-titulo">
@@ -539,7 +488,6 @@
                 <h2>Interfaces gráficas (GUI)</h2>
             </div>
 
-            <!-- 1973 · Xerox PARC -->
             <article class="card cat-gui">
                 <div class="card-top">
                     <span class="year-badge">1973</span>
@@ -553,7 +501,6 @@
                 <span class="cita">Fuente: [5]</span>
             </article>
 
-            <!-- 1981 · Xerox Star -->
             <article class="card cat-gui">
                 <div class="card-top">
                     <span class="year-badge">1981</span>
@@ -566,7 +513,6 @@
                 <span class="cita">Fuente: [5]</span>
             </article>
 
-            <!-- 1984 · Macintosh -->
             <article class="card cat-gui">
                 <div class="card-top">
                     <span class="year-badge">1984</span>
@@ -580,7 +526,6 @@
                 <span class="cita">Fuente: [6]</span>
             </article>
 
-            <!-- 1985 · Windows 1.0 -->
             <article class="card cat-gui">
                 <div class="card-top">
                     <span class="year-badge">1985</span>
@@ -594,7 +539,6 @@
                 <span class="cita">Fuente: [7]</span>
             </article>
 
-            <!-- 1995 · Windows 95 -->
             <article class="card cat-gui">
                 <div class="card-top">
                     <span class="year-badge">1995</span>
@@ -610,10 +554,7 @@
         </div>
 
 
-        <!-- =====================================================
-             COLUMNA 3 — INTERFACES MODERNAS
-             2007 → 2008 → 2023 → 2026
-             ===================================================== -->
+        <!-- COLUMNA 3 — INTERFACES MODERNAS -->
         <div class="columna">
 
             <div class="columna-titulo">
@@ -621,7 +562,6 @@
                 <h2>Interfaces modernas</h2>
             </div>
 
-            <!-- 2007 · iPhone -->
             <article class="card cat-moderno">
                 <div class="card-top">
                     <span class="year-badge">2007</span>
@@ -635,7 +575,6 @@
                 <span class="cita">Fuente: [9]</span>
             </article>
 
-            <!-- 2008 · Android -->
             <article class="card cat-moderno">
                 <div class="card-top">
                     <span class="year-badge">2008</span>
@@ -649,7 +588,6 @@
                 <span class="cita">Fuente: [9]</span>
             </article>
 
-            <!-- 2023 · IA integrada -->
             <article class="card cat-moderno">
                 <div class="card-top">
                     <span class="year-badge">2023</span>
@@ -662,7 +600,6 @@
                 <span class="cita">Fuente: [10]</span>
             </article>
 
-            <!-- 2026 · Interfaces sin contacto -->
             <article class="card cat-moderno">
                 <div class="card-top">
                     <span class="year-badge">2026</span>
@@ -745,4 +682,4 @@
 
 </body>
 
-</html>
+    </html>
