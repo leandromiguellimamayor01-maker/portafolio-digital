@@ -239,17 +239,17 @@
         }
 
         .card-img {
-    margin-top: 10px;
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 6px;
-    object-fit: contain;
-    background: transparent;
-    border: 1px solid var(--border);
-    display: block;
-    padding: 2px;
-    box-sizing: border-box;
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            border-radius: 6px;
+            object-fit: contain;
+            background: transparent;
+            border: 1px solid var(--border);
+            display: block;
+            padding: 2px;
+            box-sizing: border-box;
         }
 
         /* =========================================================
@@ -368,32 +368,34 @@
     <header class="header">
         <h1>Historia de la Informática en Cuba</h1>
         <p class="subtitle">
-            Fechas clave, personas relevantes, instituciones y logros
-            de la informática cubana, desde sus primeros antecedentes
-            hasta la actualidad.
+            Recorrido por los equipos, las instituciones y las personas
+            que construyeron la informática cubana.
         </p>
 
         <div class="autor">
             <span>AUTOR:</span>
-            <strong>Leandro Miguel Lima Mayor</strong>
+            <strong>NOMBRE Y APELLIDOS</strong>
         </div>
     </header>
 
 
     <!-- =========================================================
-         TRES COLUMNAS
+         TRES COLUMNAS TEMÁTICAS
+         Columna 1 → Hardware y equipos
+         Columna 2 → Instituciones clave
+         Columna 3 → Personas y logros
          ========================================================= -->
     <div class="columnas">
 
 
         <!-- =====================================================
-             COLUMNA 1 — LÍNEA DE TIEMPO
+             COLUMNA 1 — HARDWARE Y EQUIPOS
              ===================================================== -->
         <div class="columna">
 
             <div class="columna-titulo">
-                <span class="etiqueta">LÍNEA DE TIEMPO</span>
-                <h2>Fechas clave</h2>
+                <span class="etiqueta">EVOLUCIÓN TÉCNICA</span>
+                <h2>Hardware y equipos</h2>
             </div>
 
             <!-- 1920 -->
@@ -415,23 +417,10 @@
                     <span class="year-badge">1958</span>
                     <span class="tag">HARDWARE</span>
                 </div>
-                <h3>IBM RAMAC 650 en La Habana</h3>
-                <p>Se instala en La Habana la IBM RAMAC 650, la primera
-                   computadora electrónica en Cuba, utilizada en el
-                   sector bancario.</p>
-                <span class="cita">Fuente: [1]</span>
-            </article>
-
-            <!-- 1962 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">1962</span>
-                    <span class="tag">POLÍTICAS</span>
-                </div>
-                <h3>Creación de EMPROCA</h3>
-                <p>Se crea la Empresa de Procesamiento de Datos, marcando
-                   los primeros pasos en la institucionalización del
-                   procesamiento automatizado en Cuba.</p>
+                <h3>IBM RAMAC en La Habana</h3>
+                <p>Se instala la IBM RAMAC, primera computadora electrónica
+                   en Cuba (1ª generación), utilizada en el sector
+                   bancario.</p>
                 <span class="cita">Fuente: [1]</span>
             </article>
 
@@ -439,26 +428,13 @@
             <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">1968</span>
-                    <span class="tag">HITO</span>
+                    <span class="tag">HARDWARE</span>
                 </div>
-                <h3>Llegada de equipos SEA 4000</h3>
-                <p>Se obtienen en Francia dos equipos SEA 4000, con los
-                   que se comienzan a resolver problemas demográficos
-                   de carácter importante.</p>
+                <h3>Equipos SEA 4000</h3>
+                <p>Se adquieren en Francia dos equipos SEA 4000, con los
+                   que comienzan a resolverse problemas demográficos de
+                   importancia nacional.</p>
                 <span class="cita">Fuente: [2]</span>
-            </article>
-
-            <!-- 1969 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">1969</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>Creación del CID</h3>
-                <p>Surge en la Universidad de La Habana el Centro de
-                   Investigaciones Digitales (CID), por iniciativa
-                   directa de Fidel Castro.</p>
-                <span class="cita">Fuente: [3]</span>
             </article>
 
             <!-- 1970 · CID-201 -->
@@ -468,7 +444,7 @@
                     <span class="tag">HITO</span>
                 </div>
                 <h3>CID-201: primera computadora cubana</h3>
-                <p>El 18 de abril se presenta a Fidel la CID-201, primera
+                <p>El 18 de abril se presenta la CID-201, primera
                    minicomputadora cubana, desarrollada por el CID de la
                    Universidad de La Habana.</p>
                 <span class="cita">Fuente: [3]</span>
@@ -476,24 +452,11 @@
                      alt="Primera computadora cubana CID-201">
             </article>
 
-            <!-- 1972 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">1972</span>
-                    <span class="tag">POLÍTICAS</span>
-                </div>
-                <h3>Integración al CAME</h3>
-                <p>Cuba se integra al Consejo de Ayuda Mutua Económica
-                   (CAME) y firma un acuerdo para el desarrollo de la
-                   actividad informática.</p>
-                <span class="cita">Fuente: [2]</span>
-            </article>
-
             <!-- 1973 -->
             <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">1973</span>
-                    <span class="tag">HITO</span>
+                    <span class="tag">HARDWARE</span>
                 </div>
                 <h3>Fábrica de minicomputadoras</h3>
                 <p>El CID crea la fábrica de minicomputadoras en el área
@@ -501,23 +464,74 @@
                 <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- 1976 · CID-201A + INSAC -->
+            <!-- 1976 · CID-201A -->
             <article class="card cat-fecha">
                 <div class="card-top">
                     <span class="year-badge">1976</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>CID-201A y creación del INSAC</h3>
-                <p>Se consolida el modelo CID-201A y se crea el Instituto
-                   Nacional de Sistemas Automatizados y Técnicas de
-                   Computación (INSAC).</p>
-                <span class="cita">Fuente: [4]</span>
+                <h3>CID-201A</h3>
+                <p>Versión posterior de la CID-201 con mejoras en su
+                   arquitectura e interfaz. Consolidó el desarrollo
+                   tecnológico nacional.</p>
+                <span class="cita">Fuente: [2]</span>
                 <img class="card-img" src="cid_201a.jpg"
                      alt="Computadora CID-201A">
             </article>
 
-            <!-- 1987 -->
-            <article class="card cat-fecha">
+        </div>
+
+
+        <!-- =====================================================
+             COLUMNA 2 — INSTITUCIONES CLAVE
+             ===================================================== -->
+        <div class="columna">
+
+            <div class="columna-titulo">
+                <span class="etiqueta">ORGANIZACIÓN</span>
+                <h2>Instituciones clave</h2>
+            </div>
+
+            <!-- 1962 · EMPROCA -->
+            <article class="card cat-institucion">
+                <div class="card-top">
+                    <span class="year-badge">1962</span>
+                    <span class="tag">INSTITUCIÓN</span>
+                </div>
+                <h3>EMPROCA</h3>
+                <p>Empresa de Procesamiento de Datos. Primera institución
+                   dedicada al procesamiento automatizado en Cuba.</p>
+                <span class="cita">Fuente: [1]</span>
+            </article>
+
+            <!-- 1969 · CID -->
+            <article class="card cat-institucion">
+                <div class="card-top">
+                    <span class="year-badge">1969</span>
+                    <span class="tag">INSTITUCIÓN</span>
+                </div>
+                <h3>CID — Centro de Investigaciones Digitales</h3>
+                <p>Creado en la Universidad de La Habana por iniciativa
+                   de Fidel. Desarrolló la CID-201 y estuvo a la
+                   vanguardia de la informática cubana.</p>
+                <span class="cita">Fuente: [3]</span>
+            </article>
+
+            <!-- 1976 · INSAC -->
+            <article class="card cat-institucion">
+                <div class="card-top">
+                    <span class="year-badge">1976</span>
+                    <span class="tag">INSTITUCIÓN</span>
+                </div>
+                <h3>INSAC</h3>
+                <p>Instituto Nacional de Sistemas Automatizados y
+                   Técnicas de Computación. Órgano rector de la política
+                   informática del país.</p>
+                <span class="cita">Fuente: [4]</span>
+            </article>
+
+            <!-- 1987 · Joven Club -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">1987</span>
                     <span class="tag">INSTITUCIÓN</span>
@@ -527,58 +541,51 @@
                    en el Pabellón Cuba, primer paso de un programa que
                    llevaría la informática a todos los municipios.</p>
                 <span class="cita">Fuente: [5]</span>
+                <img class="card-img" src="joven_club.jpg"
+                     alt="Joven Club de Computación y Electrónica">
             </article>
 
-            <!-- 1997 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">1997</span>
-                    <span class="tag">POLÍTICAS</span>
-                </div>
-                <h3>Política de Informatización de la Sociedad</h3>
-                <p>El Gobierno aprueba por primera vez los Lineamientos
-                   Generales para la Informatización de la Sociedad, con
-                   objetivos hasta el año 2000.</p>
-                <span class="cita">Fuente: [6]</span>
-            </article>
-
-            <!-- 2000 -->
-            <article class="card cat-fecha">
+            <!-- 2000 · MIC -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">2000</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Creación del MIC</h3>
-                <p>El 11 de enero, mediante el Decreto-Ley No. 204, se
-                   crea el Ministerio de la Informática y las
-                   Comunicaciones (MIC).</p>
+                <h3>MIC — Ministerio de la Informática y las Comunicaciones</h3>
+                <p>Creado el 11 de enero mediante el Decreto-Ley No. 204,
+                   es el organismo encargado de ordenar y desarrollar la
+                   informática en Cuba.</p>
                 <span class="cita">Fuente: [7]</span>
+                <img class="card-img" src="mic.jpg"
+                     alt="Ministerio de la Informática y las Comunicaciones">
             </article>
 
-            <!-- 2002 -->
-            <article class="card cat-fecha">
+            <!-- 2002 · UCI -->
+            <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">2002</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Fundación de la UCI</h3>
-                <p>El 23 de septiembre abre sus puertas la Universidad de
-                   las Ciencias Informáticas (UCI), idea concebida por
-                   Fidel Castro.</p>
+                <h3>UCI — Universidad de las Ciencias Informáticas</h3>
+                <p>El 23 de septiembre abre sus puertas la UCI, principal
+                   institución de formación de profesionales de la
+                   informática en Cuba.</p>
                 <span class="cita">Fuente: [8]</span>
+                <img class="card-img" src="uci.jpg"
+                     alt="Universidad de las Ciencias Informáticas">
             </article>
 
         </div>
 
 
         <!-- =====================================================
-             COLUMNA 2 — PERSONAS RELEVANTES
+             COLUMNA 3 — PERSONAS Y LOGROS
              ===================================================== -->
         <div class="columna">
 
             <div class="columna-titulo">
-                <span class="etiqueta">FIGURAS CLAVE</span>
-                <h2>Personas relevantes</h2>
+                <span class="etiqueta">PROTAGONISTAS</span>
+                <h2>Personas y logros</h2>
             </div>
 
             <!-- Fidel Castro -->
@@ -594,7 +601,7 @@
                 <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Orlando Ramos y Luis Carrasco -->
+            <!-- Orlando Ramos + Luis Carrasco -->
             <article class="card cat-persona">
                 <div class="card-top">
                     <span class="year-badge">INGENIEROS</span>
@@ -648,113 +655,17 @@
                 <span class="cita">Fuente: [1]</span>
             </article>
 
-        </div>
-
-
-        <!-- =====================================================
-             COLUMNA 3 — INSTITUCIONES Y LOGROS
-             ===================================================== -->
-        <div class="columna">
-
-            <div class="columna-titulo">
-                <span class="etiqueta">IMPACTO</span>
-                <h2>Instituciones y logros</h2>
-            </div>
-
-            <!-- CID -->
-            <article class="card cat-institucion">
+            <!-- Lázaro Blanco Encinosa -->
+            <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">1969</span>
-                    <span class="tag">INSTITUCIÓN</span>
+                    <span class="year-badge">HISTORIADOR</span>
+                    <span class="tag">INFORMÁTICA</span>
                 </div>
-                <h3>CID — Centro de Investigaciones Digitales</h3>
-                <p>Creado en la Universidad de La Habana por iniciativa
-                   de Fidel. Desarrolló la CID-201 y estuvo a la
-                   vanguardia de la informática cubana.</p>
-                <span class="cita">Fuente: [3]</span>
-            </article>
-
-            <!-- EMPROCA -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">1962</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>EMPROCA — Empresa de Procesamiento de Datos</h3>
-                <p>Primera institución dedicada al procesamiento
-                   automatizado de datos en Cuba. Marcó el inicio de la
-                   industria informática nacional.</p>
+                <h3>Lázaro J. Blanco Encinosa</h3>
+                <p>Autor de "Apuntes para una historia de la Informática
+                   en Cuba", obra de referencia para el estudio del
+                   desarrollo informático cubano.</p>
                 <span class="cita">Fuente: [1]</span>
-            </article>
-
-            <!-- INSAC -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">1976</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>INSAC</h3>
-                <p>Instituto Nacional de Sistemas Automatizados y
-                   Técnicas de Computación. Órgano rector de la política
-                   informática del país.</p>
-                <span class="cita">Fuente: [4]</span>
-            </article>
-
-            <!-- Joven Club -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">1987</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>Joven Club de Computación y Electrónica</h3>
-                <p>Fundados el 8 de septiembre, acercan la informática a
-                   la población en todos los municipios del país.</p>
-                <span class="cita">Fuente: [5]</span>
-                <img class="card-img" src="joven_club.jpg"
-                     alt="Joven Club de Computación y Electrónica">
-            </article>
-
-            <!-- MIC -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">2000</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>MIC — Ministerio de la Informática y las Comunicaciones</h3>
-                <p>Creado el 11 de enero mediante el Decreto-Ley No. 204,
-                   es el organismo encargado de ordenar y desarrollar la
-                   informática en Cuba.</p>
-                <span class="cita">Fuente: [7]</span>
-                <img class="card-img" src="mic.jpg"
-                     alt="Ministerio de la Informática y las Comunicaciones">
-            </article>
-
-            <!-- UCI -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">2002</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>UCI — Universidad de las Ciencias Informáticas</h3>
-                <p>Fundada en 2002, es la principal institución de
-                   formación de profesionales de la informática en Cuba.
-                   Idea concebida por Fidel Castro.</p>
-                <span class="cita">Fuente: [8]</span>
-                <img class="card-img" src="uci.jpg"
-                     alt="Universidad de las Ciencias Informáticas">
-            </article>
-
-            <!-- Revista Cubana de Ciencias Informáticas -->
-            <article class="card cat-institucion">
-                <div class="card-top">
-                    <span class="year-badge">2006</span>
-                    <span class="tag">INSTITUCIÓN</span>
-                </div>
-                <h3>Revista Cubana de Ciencias Informáticas (RCCI)</h3>
-                <p>Publicación científica de la UCI que divulga los
-                   resultados de investigación en Ciencias Informáticas.
-                   Su primer número apareció en diciembre de 2006.</p>
-                <span class="cita">Fuente: [11]</span>
             </article>
 
             <!-- Logro: Soberanía tecnológica -->
@@ -789,14 +700,15 @@
                 <li><strong>Melchor F. Gil Morell</strong><span>Investigador de historia</span></li>
                 <li><strong>Tomás López Jiménez</strong><span>Investigador de historia</span></li>
                 <li><strong>José Miyar Barrucco</strong><span>UH / Proyecto CID-201</span></li>
+                <li><strong>Lázaro J. Blanco Encinosa</strong><span>Historiador de la informática</span></li>
             </ul>
         </div>
 
         <div class="bloque">
             <h3>◆ Instituciones destacadas</h3>
             <ul>
-                <li><strong>CID</strong><span>Centro de Investigaciones Digitales</span></li>
                 <li><strong>EMPROCA</strong><span>Empresa de Procesamiento de Datos</span></li>
+                <li><strong>CID</strong><span>Centro de Investigaciones Digitales</span></li>
                 <li><strong>INSAC</strong><span>Sistemas Automatizados y Técnicas de Computación</span></li>
                 <li><strong>Joven Club</strong><span>Computación y Electrónica</span></li>
                 <li><strong>MIC</strong><span>Ministerio de la Informática y las Comunicaciones</span></li>
@@ -842,8 +754,8 @@
         </ol>
     </footer>
 
-  </div>
+</div>
 
- </body>
+</body>
 
 </html>
