@@ -1855,7 +1855,7 @@ h2 span {
 
     width: 100%;
 
-    height: 750px;
+    height: auto;
 
     background:
         linear-gradient(
@@ -1865,17 +1865,27 @@ h2 span {
         );
 
     overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
 }
 
-.infografia-frame iframe {
+.infografia-frame img {
 
     width: 100%;
 
-    height: 100%;
+    height: auto;
 
-    border: 0;
+    max-width: 1400px;
 
     display: block;
+
+    border-radius: 4px;
 }
 
 .infografia-info {
@@ -2408,9 +2418,8 @@ footer {
     }
 }
      .infografia-frame {
-
-        height: 520px;
-    }
+    padding: 10px;
+     }
 
       .infografia-info {
 
@@ -2476,8 +2485,7 @@ footer {
     }
 }
 .infografia-frame {
-
-    height: 420px;
+    padding: 6px;
 }
 
 
