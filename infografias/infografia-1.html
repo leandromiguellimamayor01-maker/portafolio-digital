@@ -4,7 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía — Historia de la Informática en Cuba</title>      
+    <title>Infografía — Historia de la Informática en Cuba</title>
+
+    <!--
+    ============================================================
+    ORGANIZACIÓN POR FECHAS (orden cronológico estricto)
+    ============================================================
+    COLUMNA 1 — Línea de tiempo (8 tarjetas):
+        1920 → 1958 → 1962 → 1970 (CID-201) → 1976 (CID-201A)
+        → 1987 → 1990 → 1995
+
+    COLUMNA 2 — Personas relevantes (4 tarjetas):
+        1. Orlando Ramos + Luis Carrasco (juntos) · con imagen
+        2. Tomás López Jiménez
+        3. Melchor F. Gil Morell
+        4. José Miyar Barrucco
+
+    COLUMNA 3 — Instituciones y logros (8 tarjetas):
+        UCI, MIC, Joven Club, INSAC + 4 logros
+
+    IMÁGENES YA DISPONIBLES:
+        · cid_201.jpg          → tarjeta 1970 (columna 1)
+        · cid_201a.jpg         → tarjeta 1976 (columna 1)
+        · orlando_ramos.jpg    → persona 1 (columna 2)
+
+    IMÁGENES POR BUSCAR (3):
+        · uci.jpg              → institución 1 (columna 3)
+        · mic.jpg              → institución 2 (columna 3)
+        · joven_club.jpg       → institución 3 (columna 3)
+    ============================================================
+    -->
 
     <style>
         /* =========================================================
@@ -39,7 +68,6 @@
 
         /* =========================================================
            CABECERA
-           Título + subtítulo + firma del autor
            ========================================================= */
         .header {
             position: relative;
@@ -82,7 +110,6 @@
             margin-bottom: 22px;
         }
 
-        /* Firma del autor (requisito de la tarea) */
         .header .autor {
             display: inline-flex;
             align-items: center;
@@ -104,9 +131,6 @@
 
         /* =========================================================
            TRES COLUMNAS
-           Columna 1: Fechas clave
-           Columna 2: Personas relevantes
-           Columna 3: Instituciones y logros
            ========================================================= */
         .columnas {
             display: grid;
@@ -124,7 +148,6 @@
 
         .columna:last-child { border-right: 0; }
 
-        /* Título de cada columna */
         .columna-titulo {
             display: flex;
             flex-direction: column;
@@ -178,11 +201,10 @@
             background: var(--teal);
         }
 
-        /* Colores según categoría */
-        .card.cat-fecha::before        { background: #3b82c4; }
-        .card.cat-persona::before      { background: #9b7fc4; }
-        .card.cat-institucion::before  { background: #5fb85f; }
-        .card.cat-logro::before        { background: #f5a623; }
+        .card.cat-fecha::before       { background: #3b82c4; }
+        .card.cat-persona::before     { background: #9b7fc4; }
+        .card.cat-institucion::before { background: #5fb85f; }
+        .card.cat-logro::before       { background: #f5a623; }
 
         .card-top {
             display: flex;
@@ -235,7 +257,6 @@
             line-height: 1.5;
         }
 
-        /* Cita de la fuente dentro de la tarjeta (regla de rigor) */
         .card .cita {
             display: block;
             margin-top: 8px;
@@ -246,11 +267,11 @@
             letter-spacing: .2px;
         }
 
-        /* Imagen opcional dentro de la tarjeta */
+        /* Imagen dentro de la tarjeta */
         .card-img {
             margin-top: 10px;
             width: 100%;
-            height: 80px;
+            height: 110px;
             border-radius: 6px;
             object-fit: cover;
             background: linear-gradient(135deg, #eaf2f8, #d6e6f0);
@@ -313,7 +334,7 @@
         }
 
         /* =========================================================
-           FUENTES EN FORMATO IEEE
+           FUENTES — FORMATO IEEE
            ========================================================= */
         .fuentes {
             padding: 26px 45px 38px;
@@ -370,13 +391,12 @@
 
     <!-- =========================================================
          CABECERA
-         · Título y subtítulo → propósito de la infografía
-         · Firma → requisito obligatorio de la tarea
          ========================================================= -->
     <header class="header">
-        <h1>TÍTULO PRINCIPAL DE LA INFOGRAFÍA</h1>
+        <h1>Historia de la Informática en Cuba</h1>
         <p class="subtitle">
-            Subtítulo o frase que resume el contenido de la infografía.
+            Fechas clave, personas relevantes, instituciones y logros
+            de la informática cubana.
         </p>
 
         <div class="autor">
@@ -388,17 +408,13 @@
 
     <!-- =========================================================
          TRES COLUMNAS
-         · Columna 1 → Fechas clave (timeline de la informática)
-         · Columna 2 → Personas relevantes
-         · Columna 3 → Instituciones y logros
          ========================================================= -->
     <div class="columnas">
 
 
         <!-- =====================================================
-             COLUMNA 1 — FECHAS CLAVE
-             8 tarjetas con hitos cronológicos.
-             Tarjetas 1 y 4 llevan imagen (opcional).
+             COLUMNA 1 — LÍNEA DE TIEMPO
+             Orden cronológico estricto de arriba a abajo.
              ===================================================== -->
         <div class="columna">
 
@@ -407,95 +423,97 @@
                 <h2>Fechas clave</h2>
             </div>
 
-            <!-- Fecha 1 · CON imagen -->
+            <!-- 1920 -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1920</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
-                <span class="cita">Fuente: [1]</span>
-                <img class="card-img" src="imagen_1.jpg"
-                     alt="Descripción de la imagen 1">
-            </article>
-
-            <!-- Fecha 2 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">HITO</span>
-                </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>Título del hito (1920)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1920.</p>
                 <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- Fecha 3 -->
+            <!-- 1958 -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1958</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>Título del hito (1958)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1958.</p>
+                <span class="cita">Fuente: [1]</span>
+            </article>
+
+            <!-- 1962 -->
+            <article class="card cat-fecha">
+                <div class="card-top">
+                    <span class="year-badge">1962</span>
+                    <span class="tag">HITO</span>
+                </div>
+                <h3>Título del hito (1962)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1962.</p>
                 <span class="cita">Fuente: [2]</span>
             </article>
 
-            <!-- Fecha 4 · CON imagen -->
+            <!-- 1970 · CID-201 -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1970</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>CID-201: primera computadora cubana</h3>
+                <p>Se desarrolla la primera minicomputadora cubana, la
+                   CID-201, primera de su tipo en el país.</p>
                 <span class="cita">Fuente: [2]</span>
-                <img class="card-img" src="imagen_2.jpg"
-                     alt="Descripción de la imagen 2">
+                <img class="card-img" src="cid_201.jpg"
+                     alt="Primera computadora cubana CID-201">
             </article>
 
-            <!-- Fecha 5 -->
+            <!-- 1976 · CID-201A -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1976</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>CID-201A: evolución de la CID-201</h3>
+                <p>Versión posterior de la CID-201, con mejoras en su
+                   arquitectura e interfaz.</p>
+                <span class="cita">Fuente: [2]</span>
+                <img class="card-img" src="cid_201a.jpg"
+                     alt="Computadora CID-201A">
+            </article>
+
+            <!-- 1987 -->
+            <article class="card cat-fecha">
+                <div class="card-top">
+                    <span class="year-badge">1987</span>
+                    <span class="tag">HITO</span>
+                </div>
+                <h3>Título del hito (1987)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1987.</p>
                 <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Fecha 6 -->
+            <!-- 1990 -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1990</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>Título del hito (1990)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1990.</p>
                 <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Fecha 7 -->
+            <!-- 1995 -->
             <article class="card cat-fecha">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1995</span>
                     <span class="tag">HITO</span>
                 </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
-                <span class="cita">Fuente: [4]</span>
-            </article>
-
-            <!-- Fecha 8 -->
-            <article class="card cat-fecha">
-                <div class="card-top">
-                    <span class="year-badge">AAAA</span>
-                    <span class="tag">HITO</span>
-                </div>
-                <h3>Título del hito</h3>
-                <p>Descripción breve del acontecimiento ocurrido en ese año.</p>
+                <h3>Título del hito (1995)</h3>
+                <p>Descripción breve del acontecimiento ocurrido en 1995.</p>
                 <span class="cita">Fuente: [4]</span>
             </article>
 
@@ -504,8 +522,7 @@
 
         <!-- =====================================================
              COLUMNA 2 — PERSONAS RELEVANTES
-             6 tarjetas con figuras clave.
-             Tarjetas 1 y 3 llevan imagen (opcional).
+             4 tarjetas. Solo la primera lleva imagen.
              ===================================================== -->
         <div class="columna">
 
@@ -514,74 +531,55 @@
                 <h2>Personas relevantes</h2>
             </div>
 
-            <!-- Persona 1 · CON imagen -->
+            <!-- Persona 1 · Orlando Ramos + Luis Carrasco (juntos) -->
             <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
+                    <span class="year-badge">INGENIEROS</span>
+                    <span class="tag">CID-201</span>
                 </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
-                <span class="cita">Fuente: [1]</span>
-                <img class="card-img" src="imagen_3.jpg"
-                     alt="Retrato o referencia">
-            </article>
-
-            <!-- Persona 2 -->
-            <article class="card cat-persona">
-                <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
-                </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
-                <span class="cita">Fuente: [1]</span>
-            </article>
-
-            <!-- Persona 3 · CON imagen -->
-            <article class="card cat-persona">
-                <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
-                </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
+                <h3>Orlando Ramos Fernández y Luis Carrasco</h3>
+                <p>Dirigieron el desarrollo de la CID-201, la primera
+                   computadora cubana. Ramos fue director del proyecto
+                   y Carrasco ingeniero del equipo.</p>
                 <span class="cita">Fuente: [2]</span>
-                <img class="card-img" src="imagen_4.jpg"
-                     alt="Retrato o referencia">
+                <img class="card-img" src="orlando_ramos.jpg"
+                     alt="Ing. Luis Carrasco e Ing. Orlando Ramos">
             </article>
 
-            <!-- Persona 4 -->
+            <!-- Persona 2 · Tomás López Jiménez -->
             <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
+                    <span class="year-badge">INVESTIGADOR</span>
+                    <span class="tag">HISTORIA</span>
                 </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
-                <span class="cita">Fuente: [2]</span>
+                <h3>Tomás López Jiménez</h3>
+                <p>Investigador y documentalista de la historia de la
+                   informática en Cuba.</p>
+                <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- Persona 5 -->
+            <!-- Persona 3 · Melchor F. Gil Morell -->
             <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
+                    <span class="year-badge">INVESTIGADOR</span>
+                    <span class="tag">HISTORIA</span>
                 </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
-                <span class="cita">Fuente: [3]</span>
+                <h3>Melchor F. Gil Morell</h3>
+                <p>Investigador y autor de estudios sobre el desarrollo
+                   de la informática cubana.</p>
+                <span class="cita">Fuente: [1]</span>
             </article>
 
-            <!-- Persona 6 -->
+            <!-- Persona 4 · José Miyar Barrucco -->
             <article class="card cat-persona">
                 <div class="card-top">
-                    <span class="year-badge">NOMBRE</span>
-                    <span class="tag">ROL</span>
+                    <span class="year-badge">DIRECTOR</span>
+                    <span class="tag">UH</span>
                 </div>
-                <h3>Nombre completo</h3>
-                <p>Descripción de su aporte a la informática en Cuba.</p>
-                <span class="cita">Fuente: [4]</span>
+                <h3>José Miyar Barrucco</h3>
+                <p>Vinculado a la Universidad de La Habana y al proyecto
+                   CID-201.</p>
+                <span class="cita">Fuente: [1]</span>
             </article>
 
         </div>
@@ -589,8 +587,7 @@
 
         <!-- =====================================================
              COLUMNA 3 — INSTITUCIONES Y LOGROS
-             8 tarjetas. Mezcla de instituciones y logros.
-             Tarjetas 1 y 5 llevan imagen (opcional).
+             8 tarjetas. Las 3 primeras llevan imagen.
              ===================================================== -->
         <div class="columna">
 
@@ -599,63 +596,70 @@
                 <h2>Instituciones y logros</h2>
             </div>
 
-            <!-- Institución 1 · CON imagen -->
+            <!-- UCI -->
             <article class="card cat-institucion">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">2002</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Nombre de la institución</h3>
-                <p>Descripción de su papel en la informática cubana.</p>
-                <span class="cita">Fuente: [1]</span>
-                <img class="card-img" src="imagen_5.jpg"
-                     alt="Descripción de la imagen 5">
+                <h3>UCI — Universidad de las Ciencias Informáticas</h3>
+                <p>Fundada en 2002, dedicada a la formación de profesionales
+                   de la informática y al desarrollo de software.</p>
+                <span class="cita">Fuente: [4]</span>
+                <img class="card-img" src="uci.jpg"
+                     alt="Universidad de las Ciencias Informáticas">
             </article>
 
-            <!-- Institución 2 -->
+            <!-- MIC -->
             <article class="card cat-institucion">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">2000</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Nombre de la institución</h3>
-                <p>Descripción de su papel en la informática cubana.</p>
-                <span class="cita">Fuente: [2]</span>
+                <h3>MIC — Ministerio de la Informática y las Comunicaciones</h3>
+                <p>Creado en 2000 para impulsar el desarrollo de la
+                   informática y las comunicaciones en Cuba.</p>
+                <span class="cita">Fuente: [3]</span>
+                <img class="card-img" src="mic.jpg"
+                     alt="Ministerio de la Informática y las Comunicaciones">
             </article>
 
-            <!-- Institución 3 -->
+            <!-- Joven Club -->
             <article class="card cat-institucion">
                 <div class="card-top">
-                    <span class="year-badge">AAAA</span>
+                    <span class="year-badge">1987</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Nombre de la institución</h3>
-                <p>Descripción de su papel en la informática cubana.</p>
-                <span class="cita">Fuente: [2]</span>
+                <h3>Joven Club de Computación y Electrónica</h3>
+                <p>Fundados en 1987, acercan la informática a la población
+                   en todos los municipios del país.</p>
+                <span class="cita">Fuente: [3]</span>
+                <img class="card-img" src="joven_club.jpg"
+                     alt="Joven Club de Computación y Electrónica">
             </article>
 
-            <!-- Institución 4 -->
+            <!-- INSAC -->
             <article class="card cat-institucion">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
                     <span class="tag">INSTITUCIÓN</span>
                 </div>
-                <h3>Nombre de la institución</h3>
-                <p>Descripción de su papel en la informática cubana.</p>
+                <h3>INSAC</h3>
+                <p>Instituto Nacional de Sistemas Automatizados y Técnicas
+                   de Computación.</p>
                 <span class="cita">Fuente: [3]</span>
             </article>
 
-            <!-- Logro 1 · CON imagen -->
+            <!-- Logro 1 -->
             <article class="card cat-logro">
                 <div class="card-top">
                     <span class="year-badge">AAAA</span>
                     <span class="tag">LOGRO</span>
                 </div>
                 <h3>Título del logro</h3>
-                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
-                <span class="cita">Fuente: [3]</span>
-                <img class="card-img" src="imagen_6.jpg"
-                     alt="Descripción de la imagen 6">
+                <p>Descripción del logro y su impacto en la sociedad
+                   cubana.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
             <!-- Logro 2 -->
@@ -665,8 +669,8 @@
                     <span class="tag">LOGRO</span>
                 </div>
                 <h3>Título del logro</h3>
-                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
-                <span class="cita">Fuente: [3]</span>
+                <p>Descripción del logro y su impacto.</p>
+                <span class="cita">Fuente: [4]</span>
             </article>
 
             <!-- Logro 3 -->
@@ -676,8 +680,8 @@
                     <span class="tag">LOGRO</span>
                 </div>
                 <h3>Título del logro</h3>
-                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
-                <span class="cita">Fuente: [4]</span>
+                <p>Descripción del logro y su impacto.</p>
+                <span class="cita">Fuente: [5]</span>
             </article>
 
             <!-- Logro 4 -->
@@ -687,8 +691,8 @@
                     <span class="tag">LOGRO</span>
                 </div>
                 <h3>Título del logro</h3>
-                <p>Descripción del logro y su impacto en la sociedad cubana.</p>
-                <span class="cita">Fuente: [4]</span>
+                <p>Descripción del logro y su impacto.</p>
+                <span class="cita">Fuente: [5]</span>
             </article>
 
         </div>
@@ -698,75 +702,39 @@
 
     <!-- =========================================================
          BLOQUES FINALES
-         · Bloque 1 → Personas (resumen)
-         · Bloque 2 → Instituciones (resumen)
-         · Bloque 3 → Logros (resumen)
          ========================================================= -->
     <section class="bloques-finales">
 
-        <!-- Personas -->
         <div class="bloque">
             <h3>◆ Personas destacadas</h3>
             <ul>
-                <li>
-                    <strong>Nombre 1</strong>
-                    <span>Rol o aporte breve</span>
-                </li>
-                <li>
-                    <strong>Nombre 2</strong>
-                    <span>Rol o aporte breve</span>
-                </li>
-                <li>
-                    <strong>Nombre 3</strong>
-                    <span>Rol o aporte breve</span>
-                </li>
-                <li>
-                    <strong>Nombre 4</strong>
-                    <span>Rol o aporte breve</span>
-                </li>
-                <li>
-                    <strong>Nombre 5</strong>
-                    <span>Rol o aporte breve</span>
-                </li>
+                <li><strong>Orlando Ramos Fernández</strong><span>Director CID-201</span></li>
+                <li><strong>Luis Carrasco</strong><span>Ingeniero CID-201</span></li>
+                <li><strong>Tomás López Jiménez</strong><span>Investigador</span></li>
+                <li><strong>Melchor F. Gil Morell</strong><span>Investigador</span></li>
+                <li><strong>José Miyar Barrucco</strong><span>UH / CID</span></li>
             </ul>
         </div>
 
-        <!-- Instituciones -->
         <div class="bloque">
             <h3>◆ Instituciones destacadas</h3>
             <ul>
-                <li>
-                    <strong>Siglas</strong>
-                    <span>Nombre completo y función</span>
-                </li>
-                <li>
-                    <strong>Siglas</strong>
-                    <span>Nombre completo y función</span>
-                </li>
-                <li>
-                    <strong>Siglas</strong>
-                    <span>Nombre completo y función</span>
-                </li>
-                <li>
-                    <strong>Siglas</strong>
-                    <span>Nombre completo y función</span>
-                </li>
-                <li>
-                    <strong>Siglas</strong>
-                    <span>Nombre completo y función</span>
-                </li>
+                <li><strong>UCI</strong><span>Universidad de las Ciencias Informáticas</span></li>
+                <li><strong>MIC</strong><span>Ministerio de la Informática y las Comunicaciones</span></li>
+                <li><strong>UH</strong><span>Universidad de La Habana</span></li>
+                <li><strong>INSAC</strong><span>Sistemas automatizados</span></li>
+                <li><strong>Joven Club</strong><span>Formación popular</span></li>
             </ul>
         </div>
 
-        <!-- Logros -->
         <div class="bloque">
             <h3>◆ Logros principales</h3>
             <ul>
-                <li>Logro o dato 1.</li>
-                <li>Logro o dato 2.</li>
-                <li>Logro o dato 3.</li>
-                <li>Logro o dato 4.</li>
-                <li>Logro o dato 5.</li>
+                <li>Desarrollo del CID-201, primera minicomputadora cubana.</li>
+                <li>Formación de profesionales en informática.</li>
+                <li>Expansión de la computación a la sociedad.</li>
+                <li>Creación de la UCI.</li>
+                <li>Impulso a la soberanía tecnológica.</li>
             </ul>
         </div>
 
@@ -775,23 +743,19 @@
 
     <!-- =========================================================
          FUENTES — FORMATO IEEE
-         Mínimo 3. Aquí hay 6 huecos.
-         Cada "[n]" en las tarjetas se corresponde con esta lista.
          ========================================================= -->
     <footer class="fuentes">
         <h3>Fuentes</h3>
         <ol>
-            <li>[1] Autor, A., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
-            <li>[2] Autor, B., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
-            <li>[3] Autor, C., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
-            <li>[4] Autor, D., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
-            <li>[5] Autor, E., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
-            <li>[6] Autor, F., "Título del artículo", Nombre de la revista, vol. X, no. Y, pp. Z-Z, Año.</li>
+            <li>[1] T. López Jiménez, M. F. Gil Morell y A. Estrada Negrín, "Momentos del desarrollo de la informática y de su enseñanza en Cuba", en Historia de la Informática en Latinoamérica y el Caribe, 2009.</li>
+            <li>[2] W. García Baluja y J. A. Plasencia Solar, "Aspectos claves para la informatización y el Gobierno Electrónico", Revista Cubana de Ciencias Informáticas, vol. 14, no. 3, pp. 124-147, 2020.</li>
+            <li>[3] L. E. Domínguez, "La informática en Cuba: hitos y perspectivas", Revista Excelencias, 2022.</li>
+            <li>[4] B. Bermúdez et al., "Historia de la informática en Cuba y su relevancia en la transformación digital", Revista Cubana de Ciencias Informáticas, vol. 18, no. 2, pp. 21-35, 2024.</li>
+            <li>[5] CITMATEL, "La informatización de la sociedad cubana", 24 de mayo de 2024.</li>
         </ol>
     </footer>
 
-</div>
+ </div>
 
-</body>
-
+ </body>
 </html>
