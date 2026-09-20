@@ -152,11 +152,11 @@ const typingElement =
     document.getElementById("typing-text");
 
 const roles = [
-    "GAMEPLAY PROGRAMMER",
-    "GAME DEVELOPER",
-    "SYSTEM DESIGNER",
-    "CODE ENTHUSIAST",
-    "DIGITAL CREATOR"
+    "PROGRAMADOR DE GAMEPLAY",
+    "DESARROLLADOR DE JUEGOS",
+    "DISEÑADOR DE SISTEMAS",
+    "ENTUSIATA DE LA PROGRAMACIÓN",
+    "CREADOR DIGITAL"
 ];
 
 let roleIndex = 0;
