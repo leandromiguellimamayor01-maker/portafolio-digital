@@ -1,12 +1,7 @@
-/* =========================================================
-   ZERAMOTH PORTFOLIO
-   Main JavaScript
-   ========================================================= */
+/*    JAVASCRIPT PRINCIPAL DEL PORTFOLIO */
 
 
-/* =========================================================
-   LOADING SCREEN
-   ========================================================= */
+/*   PANTALLA DE CARGA   */
 
 const loader = document.getElementById("loader");
 const loaderProgress = document.getElementById("loader-progress");
@@ -37,9 +32,7 @@ const loadingInterval = setInterval(() => {
 }, 80);
 
 
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
+/*   MENU MOVIL */
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
@@ -55,7 +48,7 @@ if (menuToggle) {
 }
 
 
-/* Close mobile menu when clicking a link */
+/* Cerrar menu movil cuando se clickee un enlace */
 
 document.querySelectorAll(".nav-link").forEach(link => {
 
@@ -68,9 +61,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
 });
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-   ========================================================= */
+/*    NAVEGACIÓN ACTIVA */
 
 const sections = document.querySelectorAll("section[id]");
 const navigationLinks = document.querySelectorAll(".nav-link");
@@ -119,9 +110,7 @@ sections.forEach(section => {
 });
 
 
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+/*   REVELAR CON SCROLL. */
 
 const revealElements =
     document.querySelectorAll(".reveal");
@@ -157,9 +146,7 @@ revealElements.forEach(element => {
 });
 
 
-/* =========================================================
-   TYPING EFFECT
-   ========================================================= */
+/*   EFECTO DE TIPEADO. */
 
 const typingElement =
     document.getElementById("typing-text");
@@ -232,9 +219,7 @@ function typeRole() {
 setTimeout(typeRole, 1200);
 
 
-/* =========================================================
-   CHARACTER CARD PARALLAX
-   ========================================================= */
+/*   EFECTO DE PARALELAJE EN LA TARJETA DE PERSONAJE.  */
 
 const characterCard =
     document.querySelector(".character-card");
@@ -280,9 +265,7 @@ if (characterCard && window.matchMedia("(pointer: fine)").matches) {
 }
 
 
-/* =========================================================
-   PROJECT CARD TILT
-   ========================================================= */
+/*   EFECTO DE INCLINACIÓN DE LA TARJETA DE PERSONAJE.  */
 
 const projectCards =
     document.querySelectorAll(".project-card");
@@ -334,21 +317,19 @@ if (window.matchMedia("(pointer: fine)").matches) {
 }
 
 
-/* =========================================================
-   TERMINAL RANDOM STATUS
-   ========================================================= */
+/*   ESTADO RANDOM DE LA TERMINAL. */
 
 const terminalOutput =
     document.querySelectorAll(".terminal-output");
 
 const terminalMessages = [
 
-    "gameplay_developer_in_training",
-    "building_new_mechanics",
-    "learning_game_systems",
-    "compiling_ideas...",
-    "quest_progress++",
-    "experience_gained"
+    "estudiando_desarrollo_de_gameplay",
+    "contrayendo_nuevas_mecanicas",
+    "aprendiendo_sistemas_de_juegos",
+    "compilando_ideas...",
+    "progreso_de_mision++",
+    "experiencia_ganada"
 ];
 
 let terminalIndex = 0;
@@ -372,9 +353,7 @@ setInterval(() => {
 }, 3500);
 
 
-/* =========================================================
-   SMOOTH BACK TO TOP
-   ========================================================= */
+ /*  VOLVER AL INICIO */
 
 document
     .querySelectorAll('a[href="#inicio"]')
@@ -398,7 +377,7 @@ document
 
 
 /* =========================================================
-   CURRENT YEAR
+   AÑO ACTUAL
    ========================================================= */
 
 const currentYear =
@@ -416,7 +395,7 @@ if (footerParagraph) {
 
 
 /* =========================================================
-   CONSOLE EASTER EGG
+   CONSOLA
    ========================================================= */
 
 console.log(
