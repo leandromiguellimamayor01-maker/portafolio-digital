@@ -139,6 +139,36 @@ h2 span { color: var(--primary); }
 .character-footer { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border); font-size: 10px; color: var(--text-muted); }
 .scroll-indicator { display: none; }
 
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    padding: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-name {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.stat-badge {
+    font-size: 10px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
 /* PERFIL */
 .profile-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
 .profile-text p { margin-bottom: 15px; color: var(--text-muted); font-size: 15px; }
