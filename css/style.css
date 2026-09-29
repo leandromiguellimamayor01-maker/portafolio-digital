@@ -35,20 +35,6 @@ button { font: inherit; }
 
 .background-grid, .scanlines, .ambient { display: none; }
 
-/* CARGADOR */
-.loader {
-    position: fixed; inset: 0; background: var(--bg);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 10000; transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-.loader.hidden { opacity: 0; visibility: hidden; }
-.loader-content { width: min(300px, 80%); text-align: center; }
-.loader-logo { font-size: 24px; font-weight: bold; color: var(--text); margin-bottom: 15px; }
-.loader-status { display: none; } /* Ocultar texto RPG */
-.loader-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.loader-bar span { display: block; width: 0%; height: 100%; background: var(--primary); transition: width 0.1s linear; }
-.loader-percent { margin-top: 10px; color: var(--text-muted); font-size: 12px; }
-
 /* CABECERA */
 .header {
     position: fixed; top: 0; left: 0; width: 100%;
