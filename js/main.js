@@ -1,24 +1,4 @@
 
-/* PANTALLA DE CARGA */
-const loader = document.getElementById("loader");
-const loaderProgress = document.getElementById("loader-progress");
-const loaderPercent = document.getElementById("loader-percent");
-
-let progress = 0;
-
-const loadingInterval = setInterval(() => {
-    progress += Math.floor(Math.random() * 8) + 3;
-    if (progress >= 100) {
-        progress = 100;
-        clearInterval(loadingInterval);
-        setTimeout(() => {
-            loader.classList.add("hidden");
-        }, 400);
-    }
-    loaderProgress.style.width = `${progress}%`;
-    loaderPercent.textContent = `${progress}%`;
-}, 80);
-
 /* MENU MOVIL */
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
